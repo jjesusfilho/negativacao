@@ -1,0 +1,263 @@
+---
+title: "Negativação"
+author: "Joice Rodrigues"
+date: "`r format(Sys.time(), '%d de %B de %Y')`"
+output: officedown::rdocx_document
+bibliography: biblio.bib
+csl: abnt.csl
+nocite: |
+    @dplyr, @ggplot2, @rmarkdown1, @stringr, @RPostgres, @knitr @httr, @xml2
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      message  = FALSE,
+                      comment=NA,
+                      fig.width = 9, 
+                      fig.height = 7,
+                      tab.cap.pre = "Tabela "
+                      )
+options(scipen = 20, digits = 3)
+```
+
+```{r}
+library(tidyverse)
+library(flextable)
+library(officedown)
+library(officer)
+
+set_flextable_defaults(
+  font.family = "Times New Roman",
+  font.size = 9,
+  font.color = "black",
+  padding = 5,
+  table.layout = "autofit",
+  digits = 3,
+  big.mark = "",
+  decimal.mark = ",",
+  theme_fun = "theme_vanilla"
+  )
+FitFlextableToPage <- function(ft, pgwidth = 6){
+
+  ft_out <- ft %>% 
+     autofit()
+
+  ft_out <- width(ft_out, width = dim(ft_out)$widths*pgwidth /(flextable_dim(ft_out)$widths))
+  return(ft_out)
+}
+
+#scale_colour_continuous <- scale_colour_viridis_c
+#scale_colour_discrete   <- scale_colour_viridis_d
+#scale_colour_binned     <- scale_colour_viridis_b
+#scale_fill_continuous <- scale_fill_viridis_c
+#scale_fill_discrete   <- scale_fill_viridis_d
+#scale_fill_binned     <- scale_fill_viridis_b
+
+```
+
+```{r}
+load("base.rda")
+```
+
+## Introdução
+
+A presente pesquisa tem como objetivo verificar se as decisões de
+primeira instância do Tribunal de Justiça de São Paulo (TJSP), em
+procedimentos comuns cíveis, alegando inscrição indevida no cadastro de
+inadimplentes, têm maior ou menor probabilidade de procedência quando o
+requerente é beneficiário da justiça gratuita.
+
+Igualmente, a pesquisa visa saber se o valor arbitrado na sentença, em
+virtude da procedência, é maior ou menor se o requerente é beneficiário
+da gratuidade da justiça.
+
+## Procedimento metodológico
+
+A pesquisa realizou uma coleta automatizada de [julgados de primeira
+instância do TJSP](http://esaj.tjsp.jus.br/cjpg/) delimitando a consulta
+para o ano de 2021, para a classe processual "procedimento comum cível"
+e para o assunto "inscrição indevida no cadastro de inandimplentes".
+
+A coleta foi automatizada usando um pacote de funções escritas em R
+chamado [tjsp](https://tjsp.consudata.com.br). Foram baixados 13.510
+julgados. Esses julgados foram então classificados conforme o desfecho
+processual, usando procedimento automatizado. A tabela abaixo mostra os
+desfechos e suas respectivas quantidades.
+
+```{r}
+c_decisao |> 
+     flextable()  |> 
+  FitFlextableToPage()
+```
+
+Optou-se por manter somente os julgados que apreciaram o mérito, i.e.,
+os procedentes, os improcedentes e os parcialmente improcedentes. Quanto
+aos parcialmente procedentes, estes foram convertidos em procedentes. Os
+demais foram removidos da base, restando 10.217 julgados.
+
+```{r}
+c_decisao |> 
+    filter(str_detect(decisao,"procedente")) |> 
+    mutate(decisao = ifelse(decisao =="parcialmente procedente", "procedente", decisao)) |> 
+   group_by(decisao) |> 
+   summarize(frequencia = sum(frequencia)) |> 
+    flextable()  |> 
+  FitFlextableToPage()
+```
+
+Em seguida, usaram-se expressões regulares para para classificar os
+julgados conforme a existência de expressões como dano moral e
+gratuidade da justiça. Igualmente, os valores arbitrados foram extraídos
+dos julgados.
+
+Posteriormente, foram baixados os metadados processuais a fim de se
+obter informações acerca das partes. Nem todos os metadados foram
+baixados, seja porque não estavam disponibilizados, seja porque estavam
+em segredo de justiça. De modo que dos 10.217 julgados, foi possível
+recuperar informações de 9.852 partes.
+
+As partes foram classificadas conforme requerente e requerido. Os
+requerentes foram classificados em pessoa física (PF) ou pessoa jurídica
+(PJ). Os requeridos foram classificados em PF, PJ, banco ou seguradora.
+
+Por fim, as bases foram juntadas para formar uma base única com 9.852
+processos e 9.886 julgados. Essa diferença se deve ao fato de que alguns
+processos tiveram mais de uma decisão.
+
+Os gráficos abaixo mostram as frequências desses dados.
+
+```{r}
+dados |> 
+     count(dano_moral, decisao) |> 
+     mutate(dano_moral = ifelse(dano_moral == "sim", "Com dano moral", "Sem dano moral")) |> 
+     ggplot(aes(x = decisao, y = n, fill = dano_moral))+
+     geom_col(show.legend = F)+
+     scale_fill_viridis_d()+
+     facet_wrap(~dano_moral)+
+     labs(title = "Julgados conforme o mérito e a presença ou não de dano moral",
+          caption = "Fonte: TJSP")+
+     theme_minimal()
+```
+
+```{r}
+dados |> 
+  count(gratuidade, decisao) |> 
+  mutate(gratuidade = ifelse(gratuidade == "sim", "Com gratuidade", "Sem gratuidade")) |> 
+  ggplot(aes(x = decisao, y = n, fill = decisao))+
+  geom_col(show.legend = F)+
+  scale_fill_viridis_d()+
+  facet_wrap(~gratuidade)+
+  labs(title = "Julgados conforme o mérito e a presença ou não de gratuidade",
+       caption = "Fonte: TJSP")+
+  theme_minimal()
+
+```
+
+```{r}
+dados |> 
+  count(requerente, decisao) |> 
+  ggplot(aes(x = decisao, y = n, fill = decisao))+
+  geom_col(show.legend = F)+
+  scale_fill_viridis_d()+
+  facet_wrap(~requerente)+
+  labs(title = "Julgados conforme o mérito e o requerente",
+       caption = "Fonte: TJSP")+
+  theme_minimal()
+
+```
+
+```{r}
+dados |> 
+  count(requerido, decisao) |> 
+  ggplot(aes(x = decisao, y = n, fill = decisao))+
+  geom_col(show.legend = F)+
+  scale_fill_viridis_d()+
+  facet_wrap(~requerido)+
+  labs(title = "Julgados conforme o mérito e o requerido",
+       caption = "Fonte: TJSP")+
+  theme_minimal()
+
+```
+
+Para a análise do valor, foram mantidos somente os julgados procedentes.
+Além disso, foram excluídos os casos em que não foram identificados os
+valores. Para essa base, permaneceram 5589 julgados. Como vales
+arbitrados têm alta concentração de valores relativamente pequenos, a
+distribuição dos dados não é gaussiana, como se infere do gráfico
+abaixo.
+
+```{r}
+dados |> 
+      filter(!is.infinite(valor)) |> 
+      filter(valor <= 100000) |> 
+      drop_na() |> 
+      select(valor) |> 
+      ggplot(aes(x = valor))+
+      geom_histogram(fill = "#440154FF")
+```
+
+No entanto, realizada a transformação logarítimica, esses mesmos valores
+aproximam-se de uma distribuição normal:
+
+```{r}
+
+dados |> 
+      filter(!is.infinite(valor)) |> 
+      filter(valor <= 100000) |> 
+      drop_na() |> 
+      select(valor) |> 
+      mutate(valor = log(valor)) |> 
+      ggplot(aes(x = valor))+
+      geom_histogram(fill = "#440154FF")
+```
+
+Dessa forma, a análise leverá em conta o logarítimo dos valores.
+
+## Análise
+
+Foram realizadas duas análises. Uma delas considerou como variável
+resposta a decisão de mérito. A outra considerou o valor arbitrado. Para
+a primeira, procedeu-se à regressão logística. Para a segunda, regressão
+linear lognormal. Abaixo seguem os resultados.
+
+### Regressão linear
+
+```{r}
+mlm |> 
+  flextable()  |> 
+  FitFlextableToPage()
+
+```
+
+Os resultados mostram os beneficiários da justiça gratuida recebem menos que os não beneficiários. Com efeito, os beneficiários devem esperar ganhar (exp(-0.529)-1)*100 = -41,1% em relação aos não beneficiários, i.e, quarenta e um porcento a menos.
+
+Por sua vez, quando há dano moral, (exp(0.833)-1)*100 = 130%, espera-se ganhar cento e trinta porcento a mais.
+
+
+
+
+### Regressão logística
+
+```{r}
+mlogit |> 
+flextable()  |> 
+  FitFlextableToPage()
+```
+
+Os resultados mostram que o beneficiário da justiça não gratuita tem 2.72 (1/exp(-1.0020)) vezes mais chances de ganhar a ação que um beneficiário da justiça gratuita.
+
+Embora as diferencas se mostrem significativas para todas as variáveis, o modelo necessita de melhor ajuste para alcançar bons resultados preditivos:
+
+```{r}
+m_confusao |> 
+   flextable() |> 
+    FitFlextableToPage()
+
+```
+
+## Bibliografia
+

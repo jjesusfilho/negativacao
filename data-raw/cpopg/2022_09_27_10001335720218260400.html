@@ -1,0 +1,2925 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Portal de Serviços e-SAJ</title>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam.nr-data.net"]},distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:"749349981",accountID:"475116",trustKey:"475116",xpid:"UAECUFdVGwQDUVlRAwYCUQ==",licenseKey:"b61bdf610d",applicationID:"735834757"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(31),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{l?l-=1:o(s||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:c.now();i("err",[t,n])}var i=t("handle"),a=t(32),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,p="nr@seenError";if(!c.disabled){var l=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(14),t(13),"addEventListener"in window&&t(7),c.xhrWrappable&&t(15),d=!0)}s.on("fn-start",function(t,e,n){d&&(l+=1)}),s.on("fn-err",function(t,e,n){d&&!n[p]&&(f(n,p,function(){return!0}),this.thrown=!0,o(n))}),s.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){U++,L=g.hash,this[u]=y.now()}function o(){U--,g.hash!==L&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var s="-start",c="-end",f="-body",u="fn"+s,d="fn"+c,p="cb"+s,l="cb"+c,h="jsTime",m="fetch",v="addEventListener",w=window,g=w.location,y=t("loader");if(w[v]&&y.xhrWrappable&&!y.disabled){var x=t(11),b=t(12),E=t(9),R=t(7),O=t(14),T=t(8),S=t(15),P=t(10),M=t("ee"),C=M.get("tracer"),N=t(23);t(17),y.features.spa=!0;var L,U=0;M.on(u,r),b.on(p,r),P.on(p,r),M.on(d,o),b.on(l,o),P.on(l,o),M.buffer([u,d,"xhr-resolved"]),R.buffer([u]),O.buffer(["setTimeout"+c,"clearTimeout"+s,u]),S.buffer([u,"new-xhr","send-xhr"+s]),T.buffer([m+s,m+"-done",m+f+s,m+f+c]),E.buffer(["newURL"]),x.buffer([u]),b.buffer(["propagate",p,l,"executor-err","resolve"+s]),C.buffer([u,"no-"+u]),P.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(T,m+s),a(T,m+"-done"),a(P,"new-jsonp"),a(P,"jsonp-end"),a(P,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,N(!0)),w[v]("load",i,N(!0)),w[v]("popstate",function(){i(0,U>1)},N(!0))}},{}],5:[function(t,e,n){function r(){var t=new PerformanceObserver(function(t,e){var n=t.getEntries();s(v,[n])});try{t.observe({entryTypes:["resource"]})}catch(e){}}function o(t){if(s(v,[window.performance.getEntriesByType(w)]),window.performance["c"+p])try{window.performance[h](m,o,!1)}catch(t){}else try{window.performance[h]("webkit"+m,o,!1)}catch(t){}}function i(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var a=t("ee"),s=t("handle"),c=t(14),f=t(13),u=t(6),d=t(23),p="learResourceTimings",l="addEventListener",h="removeEventListener",m="resourcetimingbufferfull",v="bstResource",w="resource",g="-start",y="-end",x="fn"+g,b="fn"+y,E="bstTimer",R="pushState",O=t("loader");if(!O.disabled){O.features.stn=!0,t(9),"addEventListener"in window&&t(7);var T=NREUM.o.EV;a.on(x,function(t,e){var n=t[0];n instanceof T&&(this.bstStart=O.now())}),a.on(b,function(t,e){var n=t[0];n instanceof T&&s("bst",[n,e,this.bstStart,O.now()])}),c.on(x,function(t,e,n){this.bstStart=O.now(),this.bstType=n}),c.on(b,function(t,e){s(E,[e,this.bstStart,O.now(),this.bstType])}),f.on(x,function(){this.bstStart=O.now()}),f.on(b,function(t,e){s(E,[e,this.bstStart,O.now(),"requestAnimationFrame"])}),a.on(R+g,function(t){this.time=O.now(),this.startPath=location.pathname+location.hash}),a.on(R+y,function(t){s("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),u()?(s(v,[window.performance.getEntriesByType("resource")]),r()):l in window.performance&&(window.performance["c"+p]?window.performance[l](m,o,d(!1)):window.performance[l]("webkit"+m,o,d(!1))),document[l]("scroll",i,d(!1)),document[l]("keypress",i,d(!1)),document[l]("click",i,d(!1))}}},{}],6:[function(t,e,n){e.exports=function(){return"PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver}},{}],7:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1];if(null!==n&&("function"==typeof n||"object"==typeof n)){var r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],8:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return o.emit(n+"start",[t,a],s),s.then(function(t){return o.emit(n+"end",[null,t],s),t},function(t){throw o.emit(n+"end",[t],s),t})})}var o=t("ee").get("fetch"),i=t(32),a=t(31);e.exports=o;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,p=s.Response,l=s.fetch,h="prototype",m="nr@context";d&&p&&l&&(a(u,function(t,e){r(d[h],e,f),r(p[h],e,f)}),r(s,"fetch",c),o.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(c+"done",[null,e],n)}else o.emit(c+"done",[t],n)}))},{}],9:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],10:[function(t,e,n){function r(t){function e(){f.emit("jsonp-end",[],l),t.removeEventListener("load",e,c(!1)),t.removeEventListener("error",n,c(!1))}function n(){f.emit("jsonp-error",[],l),f.emit("jsonp-end",[],l),t.removeEventListener("load",e,c(!1)),t.removeEventListener("error",n,c(!1))}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var d=s(a),p="function"==typeof d.parent[d.key];if(p){var l={};u.inPlace(d.parent,[d.key],"cb-",l),t.addEventListener("load",e,c(!1)),t.addEventListener("error",n,c(!1)),f.emit("new-jsonp",[t.src],l)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(d);return e?e[1]:null}function a(t,e){var n=t.match(l),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function s(t){var e=t.match(p);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var c=t(23),f=t("ee").get("jsonp"),u=t("wrap-function")(f);if(e.exports=f,o()){var d=/[?&](?:callback|cb)=([^&#]+)/,p=/(.*)\.([^.]+)/,l=/^(\w+)(\.|$)(.*)$/,h=["appendChild","insertBefore","replaceChild"];Node&&Node.prototype&&Node.prototype.appendChild?u.inPlace(Node.prototype,h,"dom-"):(u.inPlace(HTMLElement.prototype,h,"dom-"),u.inPlace(HTMLHeadElement.prototype,h,"dom-"),u.inPlace(HTMLBodyElement.prototype,h,"dom-")),f.on("dom-start",function(t){r(t[0])})}},{}],11:[function(t,e,n){var r=t("ee").get("mutation"),o=t("wrap-function")(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],12:[function(t,e,n){function r(t){var e=i.context(),n=s(t,"executor-",e,null,!1),r=new f(n);return i.context(r).getCtx=function(){return e},r}var o=t("wrap-function"),i=t("ee").get("promise"),a=t("ee").getOrSetContext,s=o(i),c=t(31),f=NREUM.o.PR;e.exports=i,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){i.emit("propagate",[null,!o],a,!1,!1),o=o||!t}}var o=!1;c(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var a=e.apply(f,arguments),s=f.resolve(a);return s}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&i.emit("propagate",[t,!0],n,!1,!1),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),c(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),o.wrapInPlace(f.prototype,"then",function(t){return function(){var e=this,n=o.argsToArray.apply(this,arguments),r=a(e);r.promise=e,n[0]=s(n[0],"cb-",r,null,!1),n[1]=s(n[1],"cb-",r,null,!1);var c=t.apply(this,n);return r.nextPromise=c,i.emit("propagate",[e,!0],c,!1,!1),c}}),i.on("executor-start",function(t){t[0]=s(t[0],"resolve-",this,null,!1),t[1]=s(t[1],"resolve-",this,null,!1)}),i.on("executor-err",function(t,e,n){t[1](n)}),i.on("cb-end",function(t,e,n){i.emit("propagate",[n,!0],this.nextPromise,!1,!1)}),i.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=i.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],13:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],14:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],15:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){x.push(t),m&&(E?E.then(a):w?w(a):(R=-R,O.data=R))}function a(){for(var t=0;t<x.length;t++)r([],x[t]);x.length&&(x=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(7);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),p=t(23),l=NREUM.o,h=l.XHR,m=l.MO,v=l.PR,w=l.SI,g="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],x=[];e.exports=u;var b=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(g,o,p(!1))}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(h,b),b.prototype=h.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),m){var E=v&&v.resolve();if(!w&&!v){var R=1,O=document.createTextNode(R);new m(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===g||a()})},{}],16:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=l.generateSpanId(),m=l.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||c(t)&&p())&&(w.traceContextParentHeader=o(h,m),w.traceContextStateHeader=i(h,v,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&c(t)&&d())&&(w.newrelicHeader=a(h,m,v,n,r,f)),w}function o(t,e){return"00-"+e+"-"+t+"-01"}function i(t,e,n,r,o){var i=0,a="",s=1,c="",f="";return o+"@nr="+i+"-"+s+"-"+n+"-"+r+"-"+t+"-"+a+"-"+c+"-"+f+"-"+e}function a(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(s.d.tk=i),btoa(JSON.stringify(s))}function s(t){return f()&&c(t)}function c(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var o=h(n.allowed_origins[r]);if(t.hostname===o.hostname&&t.protocol===o.protocol&&t.port===o.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function p(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var l=t(28),h=t(18);e.exports={generateTracePayload:r,shouldGenerateTrace:s}},{}],17:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(d[r],this.listener,!1);return e.protocol&&"data"===e.protocol?void g("Ajax/DataUrl/Excluded"):void(e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):i(this,t),n.cbTime=this.cbTime,s("xhr",[e,n,this.startTime,this.endTime,"xhr"],this)))}}function o(t,e){var n=c(e),r=t.params;r.hostname=n.hostname,r.port=n.port,r.protocol=n.protocol,r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=n,t.sameOrigin=n.sameOrigin}function i(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable&&!a.disabled){var s=t("handle"),c=t(18),f=t(16).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],p=d.length,l=t("id"),h=t(24),m=t(22),v=t(19),w=t(23),g=t(25).recordSupportability,y=NREUM.o.REQ,x=window.XMLHttpRequest;a.features.xhr=!0,t(15),t(8),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,e.params=this.params||{},e.metrics=this.metrics||{},t.addEventListener("load",function(n){i(e,t)},w(!1)),h&&(h>34||h<10)||t.addEventListener("progress",function(t){e.lastSize=t.loaded},w(!1))}),u.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=m(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<p;s++)e.addEventListener(d[s],this.listener,w(!1))}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("xhr-resolved",function(){this.endTime=a.now()}),u.on("addEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof x&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var o=f(this.parsedOrigin);if(o&&(o.newrelicHeader||o.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var i={};for(var a in r)i[a]=r[a];i.headers=new Headers(r.headers||{}),e(i.headers,o)&&(this.dt=o),t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&e(t[0].headers,o)&&(this.dt=o)}),u.on("fetch-start",function(t,e){this.params={},this.metrics={},this.startTime=a.now(),this.dt=e,t.length>=1&&(this.target=t[0]),t.length>=2&&(this.opts=t[1]);var n,r=this.opts||{},i=this.target;if("string"==typeof i?n=i:"object"==typeof i&&i instanceof y?n=i.url:window.URL&&"object"==typeof i&&i instanceof URL&&(n=i.href),o(this,n),"data"!==this.params.protocol){var s=(""+(i&&i instanceof y&&i.method||r.method||"GET")).toUpperCase();this.params.method=s,this.txSize=m(r.body)||0}}),u.on("fetch-done",function(t,e){if(this.endTime=a.now(),this.params||(this.params={}),"data"===this.params.protocol)return void g("Ajax/DataUrl/Excluded");this.params.status=e?e.status:0;var n;"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var r={txSize:this.txSize,rxSize:n,duration:a.now()-this.startTime};s("xhr",[this.params,r,this.startTime,this.endTime,"fetch"],this)})}},{}],18:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];if(0===(t||"").indexOf("data:"))return{protocol:"data"};var e=document.createElement("a"),n=window.location,o={};e.href=t,o.port=e.port;var i=e.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=e.hostname||n.hostname,o.pathname=e.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return o.sameOrigin=a&&(!e.hostname||s),"/"===o.pathname&&(r[t]=o),o}},{}],19:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?o(t.response):"text"===n||""===n||void 0===n?o(t.responseText):void 0}var o=t(22);e.exports=r},{}],20:[function(t,e,n){function r(){}function o(t,e,n,r){return function(){return u.recordSupportability("API/"+e+"/called"),i(t+e,[f.now()].concat(s(arguments)),n?null:this,r),n?void 0:this}}var i=t("handle"),a=t(31),s=t(32),c=t("ee").get("tracer"),f=t("loader"),u=t(25),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",h=l+"ixn-";a(p,function(t,e){d[e]=o(l,e,!0,"api")}),d.addPageAction=o(l,"addPageAction",!0),d.setCurrentRouteName=o(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(h+"tracer",[f.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=o(h,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),u.recordSupportability("API/noticeError/called"),i("err",[t,f.now(),!1,e])}},{}],21:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],22:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],23:[function(t,e,n){var r=!1;try{var o=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,o),window.removeEventListener("testPassive",null,o)}catch(i){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],24:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],25:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return i("storeMetric",n,null,"api"),n}function o(t,e){var n=[s,t,{name:t},e];return i("storeEventMetrics",n,null,"api"),n}var i=t("handle"),a="sm",s="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:s},recordSupportability:r,recordCustom:o}},{}],26:[function(t,e,n){function r(){return s.exists&&performance.now?Math.round(performance.now()):(i=Math.max((new Date).getTime(),i))-a}function o(){return i}var i=(new Date).getTime(),a=i,s=t(33);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=o},{}],27:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function o(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;var o=[r],i=a({});i&&o.push(i),l("lcp",o)}}function i(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function s(t){if(t instanceof w&&!y){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=h.now()?n.fid=h.now()-e:e>h.offset&&e<=Date.now()?(e-=h.offset,n.fid=h.now()-e):e=h.now(),y=!0,l("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=h.now(),l("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,d,p,l=t("handle"),h=t("loader"),m=t(30),v=t(23),w=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(g){}d=new PerformanceObserver(o);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(g){}p=new PerformanceObserver(i);try{p.observe({type:"layout-shift",buffered:!0})}catch(g){}}if("addEventListener"in document){var y=!1,x=["click","keydown","mousedown","pointerdown","touchstart"];x.forEach(function(t){document.addEventListener(t,s,v(!1))})}m(c)}},{}],28:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){return a(16)}function i(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,o=window.crypto||window.msCrypto;o&&o.getRandomValues&&Uint8Array&&(n=o.getRandomValues(new Uint8Array(t)));for(var i=[],a=0;a<t;a++)i.push(e().toString(16));return i.join("")}e.exports={generateUuid:r,generateSpanId:o,generateTraceId:i}},{}],29:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}e.exports={agent:o,version:i,match:r}},{}],30:[function(t,e,n){function r(t){function e(){t(s&&document[s]?document[s]:document[i]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,o(!1))}var o=t(23);e.exports=r;var i,a,s;"undefined"!=typeof document.hidden?(i="hidden",a="visibilitychange",s="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",a="webkitvisibilitychange",s="webkitVisibilityState")},{}],31:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],32:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],33:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?f(t,c,a):a()}function n(n,r,o,i,a){if(a!==!1&&(a=!0),!l.aborted||i){t&&a&&t(n,r,o);for(var s=e(o),c=m(n),f=c.length,u=0;u<f;u++)c[u].apply(s,r);var p=d[y[n]];return p&&p.push([x,n,r,s]),s}}function i(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return p[t]=p[t]||o(n)}function w(t,e){l.aborted||u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:i,addEventListener:i,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:s,aborted:!1};return x}function i(t){return f(t,c,a)}function a(){return new r}function s(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",f=t("gos"),u=t(31),d={},p={},l=e.exports=o();e.exports.getOrSetContext=i,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=O.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+O.offset],null,"api"),s("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function o(){"complete"===m.readyState&&i()}function i(){s("mark",["domContent",a()+O.offset],null,"api")}var a=t(26),s=t("handle"),c=t(31),f=t("ee"),u=t(29),d=t(21),p=t(23),l=d.getConfiguration("ssl")===!1?"http":"https",h=window,m=h.document,v="addEventListener",w="attachEvent",g=h.XMLHttpRequest,y=g&&g.prototype,x=!1;NREUM.o={ST:setTimeout,SI:h.setImmediate,CT:clearTimeout,XHR:g,REQ:h.Request,EV:h.Event,PR:h.Promise,MO:h.MutationObserver};var b=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1216.min.js"},R=g&&y&&y[v]&&!/CriOS/.test(navigator.userAgent),O=e.exports={offset:a.getLastTimestamp(),now:a,origin:b,features:{},xhrWrappable:R,userAgent:u,disabled:x};if(!x){t(20),t(27),m[v]?(m[v]("DOMContentLoaded",i,p(!1)),h[v]("load",r,p(!1))):(m[w]("onreadystatechange",o),h[w]("onload",r)),s("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,f){function nrWrapper(){var i,a,u,p;try{a=this,i=d(arguments),u="function"==typeof r?r(i,a):r||{}}catch(l){o([l,"",[i,a,c],u],t)}s(n+"start",[i,a,c],u,f);try{return p=e.apply(a,i)}catch(h){throw s(n+"err",[i,a,h],u,f),h}finally{s(n+"end",[i,a,p],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,i(e,nrWrapper,t),nrWrapper)}function r(t,e,r,o,i){r||(r="");var s,c,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)c=e[f],s=t[c],a(s)||(t[c]=n(s,u?c+r:r,o,c,i))}function s(n,r,i,a){if(!h||e){var s=h;h=!0;try{t.emit(n,r,i,e,a)}catch(c){o([c,n,r,i],t)}h=s}}return t||(t=u),n.inPlace=r,n.flag=p,n}function o(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function i(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(i){o([i],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function s(t,e){var n=e(t);return n[p]=t,i(t,n,u),n}function c(t,e,n){var r=t[e];t[e]=s(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(32),p="nr@original",l=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=s,e.exports.wrapInPlace=c,e.exports.argsToArray=f},{}]},{},["loader",2,17,5,3,4]);</script><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/cpopg/softheme/src/css/app.css?v=2.8.34-30">
+<link rel="stylesheet" href="/cpopg/softheme/src/fonts/saj/styles.css?v=2.8.34-30">
+<link rel="stylesheet" href="/cpopg/css/formulario.css?v=2.8.34-30" type="text/css">
+<link rel="stylesheet" href="/cpopg/webjars/select2/3.5.4/select2.css?v=2.8.34-30" type="text/css">
+<link rel="stylesheet" href="/cpopg/webjars/select2/3.5.4/select2-bootstrap.css?v=2.8.34-30" type="text/css">
+<link rel="stylesheet" href="/cpopg/css/saj/select2/saj-select2.css">
+<script>
+	window.saj = window.saj || {};
+	window.saj.env = window.saj.env || {};
+	window.saj.env.root = '/cpopg';
+	window.saj.env.css = '/cpopg/css';
+	window.saj.env.js = '/cpopg/js';
+	window.saj.env.imagens = '/cpopg/imagens';
+	window.saj.env.queryString = 'processo.codigo=B40004AQD0000&processo.foro=400&processo.numero=1000133-57.2021.8.26.0400';	
+
+	window.saj.cpo = window.saj.cpo || {};
+
+	// transfere variavel se cpo esta rodando para totem
+	window.saj.cpo.totem = 'false' == 'true';
+</script><script language="javascript" type="text/JavaScript" src="/cpopg/js/jquery/jquery.min.js?n=1620728708"></script><script language="javascript" type="text/JavaScript" src="/cpopg/js/jquery/jquery.func_toggle.js?n=6936ba77-baee-41e6-8f08-a87596e1f335"></script><script language="javascript" type="text/javascript" src="/cpopg/js/jquery/jquery.blockUI.min.js?n=2c09e9f5-0c15-4b6a-93c9-58f7029ed282"></script><script language="javascript" type="text/javascript" src="/cpopg/js/jquery/jquery.browser.min.js?n=55ce4a72-4423-4084-8357-415585b89099"></script><script language="javascript" type="text/javascript" src="/cpopg/webjars/lodash/4.17.5/lodash.js?n=6b7a7f75-531d-426b-ae9f-41a4420140ec"></script><script language="javascript" type="text/JavaScript" src="/cpopg/js/select2/select2.js?n=d088f7bc-bebf-4f8b-84de-7d9a101247d2"></script><script language="javascript" type="text/JavaScript" src="/cpopg/webjars/select2/3.5.4/select2_locale_pt-BR.js?n=ca87f8a6-ad01-478b-980c-1ac16620ae6a"></script><script language="javascript" type="text/JavaScript" src="/cpopg/js/saj/saj-select2.js?n=9b2bb04f-0a8f-48e5-9f68-c09b80cadf0c"></script><script language="javascript" type="text/JavaScript" src="/cpopg/js/saj/saj-web-2.2.41-4.js?n=cd16d40a-baa5-43b6-a7a3-dc087cc8aabc"></script><script language="javascript" type="text/JavaScript" src="/cpopg/js/saj/saj-tooltip.js?n=0a0af3df-4f9f-42b2-b8f6-5768d3eac2ec"></script><script language="javascript" type="text/JavaScript" src="/cpopg/js/saj/saj-popup-modal-1.0.0-1.js?n=653f24e9-eb4f-40d6-83a6-dfea6feaf799"></script><script language="javascript" type="text/JavaScript" src="/cpopg/js/saj/saj-browser.js?n=a55e8284-1225-4f1b-948c-3c0d651e682e"></script><script language="javascript" type="text/JavaScript" src="/cpopg/js/saj/saj-mascara-input.js?n=590fdefa-3738-4131-9794-2a626a3913d8"></script><script language="javascript" type="text/JavaScript" src="/cpopg/js/saj/saj-numeroProcesso.js?n=7cf1e511-2e4f-45fc-97e2-cd8edd896484"></script><script language="javascript" type="text/JavaScript" src="/cpopg/js/saj-cpo-cbpesquisa.js?n=686458821"></script><script language="javascript" type="text/JavaScript" src="/cpopg/js/saj/acessibilidade/acessibilidade.js?n=566b413c-19b9-4350-b17e-d1a45b63a9ed"></script><script language="javascript" type="text/JavaScript" src="/cpopg/softheme/src/js/app.js?n=789536343"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js?n=3d2b8213-73b2-4cd5-9000-52f35b946c2d" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js?n=1791337263" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script><script>
+	(function($){
+		$(function(){
+			var intervalo = 1795000;
+			$.saj.manterSessao('/cpopg/manterSessao.do', intervalo);
+		});
+				
+	})(jQuery);
+</script><script language="javascript" type="text/JavaScript">
+        $.saj = $.saj || {};
+        $.saj.acessoRecurso = {
+            abrirPastaDigitalEmPopup: 'true' == 'true',
+            idRecursoQueProvocouLiberacaoPorSenha: '',
+            popupSenha: {
+                mostrar: 'false' == 'true',
+                titulo: 'Senha do processo',
+                altura: 220 + Number("10"),
+                alturaAdicionalParaMensagemValidacao: Number("0"),
+                largura: 580
+            }
+        };
+
+        $.saj.getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)), sURLVariables = sPageURL.split('&'), sParameterName, i;
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        };
+    </script><script language="javascript" type="text/JavaScript" src="/cpopg/jsp/show-2.8.33-0.js?n=1155165209"></script><script type="text/javascript">
+		(function($) {
+			$(function(){
+				// Correção temporária do alinhamento do divisor de seção de formulário do SPW 
+				$('td[background$="spw/fundo_subtitulo2.gif"]').attr('valign', 'top');
+				
+				
+			})
+		})(jQuery);
+	</script><script src="https://fast.conpass.io/H1xuDQHJ8X.js"></script><script type="text/javascript">
+            Conpass.init({
+                email: "156432",
+            });
+        </script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    (function ($) {
+        $(function () {
+            var captcha = $.saj.getUrlParameter('uuidCaptcha');
+
+            if (!captcha) {
+                return;
+            }
+
+            if(!captcha){
+                return;
+            }
+            var $processoPrinc = $('.processoPrinc');
+            $processoPrinc.attr('href', $processoPrinc.attr('href') + '&uuidCaptcha=' + captcha);
+
+            var $processoPaiApenso = $('.processoPaiApenso');
+            $processoPaiApenso.attr('href', $processoPaiApenso.attr('href') + '&uuidCaptcha=' + captcha);
+
+            $('.incidente').each(function () {
+                var $incidente = $(this);
+                var url = $incidente.attr('href');
+                $incidente.attr('href', url + '&uuidCaptcha=' + captcha);
+            });
+
+        })
+    })(jQuery);
+</script><!-- HEADER--><div class="unj-entity-header">
+    
+
+
+
+
+<div class="unj-entity-header__actions">
+    <div class="container">
+        <div class="row">
+            <div class="col-3 col-md-4">
+                <a href="javascript:history.back();" class="unj-link-back">
+                    <i id="setaVoltar" class="icon-back"></i>
+                </a>
+            </div>
+            <div class="col-13 col-md-12 unj-ta-r">
+                <!-- CDAS -->
+                
+                <!-- Custas -->
+                
+                <!-- Pasta digital -->
+                
+                    
+                        
+                            
+                        
+                        
+                    
+                    
+                        
+                            <a class="linkConsultaSG btn btn-secondary btn-space" href="/cpopg/abrirConsultaProcessoSG.do?nuProcesso=10001335720218260400&amp;cdProcessoSg=RI006LHKJ0000&amp;cdForoSg=990&amp;isProcessoOrigemCr=false" target="_blank">
+                                Consultar em 2ª instância
+                            </a>
+                        
+                        
+                    
+                
+                
+                    
+                    
+                        <!-- Peticionar -->
+                        
+                            <button class="btn btn-primary btn-space" id="pbPeticionar" name="pbPeticionar" onclick="window.location.href = '/cpopg/peticionarIntermediariaParaProcesso.do?cdProcesso=B40004AQD0000&amp;cdForo=400&amp;peticionanteResponsavel=561159-251219'">
+                                Peticionar
+                            </button>
+                        
+                        
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+
+
+
+
+
+
+<div class="unj-entity-header__summary">
+    <div id="containerDadosPrincipaisProcesso" class="container">
+        <div class="row">
+            <div class="col-lg-12 col-xl-13">
+                <!--principal -->
+                
+                    <span id="numeroProcesso" class="unj-larger-1">
+                        1000133-57.2021.8.26.0400
+                    </span>
+                    
+                    
+                        <span id="labelSituacaoProcesso" class="unj-tag">Em grau de recurso</span>
+                    
+                    
+                    
+                
+                <!-- incidente -->
+                
+                
+                    <span class="unj-tag">Tramitação prioritária</span>
+                
+                
+            </div>
+
+        </div>
+        <div class="row">
+            
+                <div class="col-lg-3 col-xl-3 mb-3">
+                    <span id="labelClasseProcesso" class="unj-label">Classe</span>
+                    <div class="lh-1-1 line-clamp__2"><span id="classeProcesso" title="Procedimento Comum Cível">Procedimento Comum Cível</span></div>
+                </div>
+            
+            
+                <div class="col-lg-2 col-xl-3 mb-3">
+                    <span id="labelAssuntoProcesso" class="unj-label">
+                        Assunto
+                    </span>
+                    <div class="lh-1-1 line-clamp__2"> <span id="assuntoProcesso" title="Inclusão Indevida em Cadastro de Inadimplentes">Inclusão Indevida em Cadastro de Inadimplentes</span>
+</div>
+                </div>
+            
+            
+                <div class="col-lg-2 col-xl-2 mb-2">
+                    <span id="labelForoProcesso" class="unj-label">
+                        Foro
+                    </span>
+                    <div class="lh-1-1 line-clamp__2"> <span id="foroProcesso" title="Foro de Olímpia">Foro de Olímpia</span>
+</div>
+                </div>
+            
+            
+                <div class="col-lg-3 col-xl-2 mb-2">
+                    <span id="labelVaraProcesso" class="unj-label">
+                        Vara
+                    </span>
+                    <div class="lh-1-1 line-clamp__2"><span id="varaProcesso" title="2ª Vara Cível">2ª Vara Cível</span></div>
+                </div>
+            
+
+            
+                <div class="col-lg-3 mb-2">
+                    <span id="labelJuizProcesso" class="unj-label">Juiz</span>
+                    <div class="line-clamp__2"> <span id="juizProcesso" title="Gabrielle Gasparelli Cavalcante">Gabrielle Gasparelli Cavalcante</span> </div>
+                </div>
+            
+
+            <!-- Processo principal -->
+            
+
+            
+        </div>
+    </div>
+</div>
+
+    
+
+
+
+
+<div class="unj-entity-header__details">
+    <div class="container">
+        <div class="unj-ta-r">
+            
+                <a href="#maisDetalhes" class="unj-link-collapse" data-toggle="collapse" aria-expanded="false" aria-controls="maisDetalhes">
+                    <span class="unj-link-collapse__show">
+                        <i id="botaoExpandirDadosSecundarios" class="unj-link-collapse__icon glyph glyph-chevron-down"></i>
+                        Mais
+                    </span>
+                    <span class="unj-link-collapse__hide">
+                        <i id="botaoRecolherDadosSecundarios" class="unj-link-collapse__icon glyph glyph-chevron-up"></i>
+                        Recolher
+                    </span>
+                </a>
+            
+        </div>
+        <div id="maisDetalhes" class="collapse" aria-expanded="false">
+            <div class="row unj-row--border-top">
+                
+                    <div class="col-lg-3 mb-2">
+                        <span id="labelDistribuicaoProcesso" class="unj-label">Distribuição </span>
+                        <div id="dataHoraDistribuicaoProcesso">15/01/2021 às 17:23 - Livre</div>
+                    </div>
+                
+                
+                
+                    <div class="col-lg-3 mb-2">
+                        <span id="labelControleProcesso" class="unj-label">Controle</span>
+                        <div id="numeroControleProcesso">2021/000031</div>
+                    </div>
+                
+                
+                    <div class="col-lg-2 col-xl-2 mb-2">
+                        <span id="labelAreaProcesso" class="unj-label">Área</span>
+                        <div id="areaProcesso" class="lh-1-1 line-clamp__2"> <span title="Cível">Cível</span>
+</div>
+                    </div>
+                
+                
+                    <div class="col-lg-2 mb-2">
+                        <span id="lavelValorAcaoProcesso" class="unj-label">Valor da ação</span>
+                        <div id="valorAcaoProcesso">R$         97.729,76</div>
+                    </div>
+                
+                
+                
+                
+                    <div class="col-lg-2 mb-2">
+                        <span class="unj-label">Outros assuntos</span>
+                        <div class="line-clamp__2"> <span title="Indenização por Dano Moral,Liminar">Indenização por Dano Moral,Liminar</span>
+</div>
+                    </div>
+                
+                
+                
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+</div>
+
+
+<div class="div-conteudo container mb-90">
+	
+	
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+		
+
+
+
+
+    
+
+
+
+<aside class="aside-nav aside-nav--left"><div class="aside-nav__inner">
+        <header class="aside-nav__main-menu__header"><span class="aside-nav__main-menu__header__text">  Menu e-SAJ</span>
+            <a href="#" class="aside-nav__user__close-button close-offcanvas">
+                <img src="https://esaj.tjsp.jus.br/esaj/img/icons/icon-close--light.png" alt=""></a>
+        </header><nav class="aside-nav__main-menu"><ul class="aside-nav__main-menu__list" id="conteudoMenuEsaj"></ul></nav><div id="esaj-beta-switcher-placeholder"></div>
+    </div>
+</aside><aside class="aside-nav aside-nav--right aside-nav__user"><div class="aside-nav__inner">
+        <div class="aside-nav__user__sign">
+            <div class="aside-nav__user__sign__brand">
+                <img src="https://esaj.tjsp.jus.br/esaj/img/aside/brasoes/br-tjsp.jpg" alt="">
+</div>
+            <ul class="aside-nav__user__sign__list">
+<li><span class="aside-nav__user__sign__place">Tribunal de Justiça do Estado de São Paulo</span></li>
+            </ul>
+<a href="#" class="aside-nav__user__close-button close-offcanvas">
+                <img src="https://esaj.tjsp.jus.br/esaj/img/icons/icon-close--dark.png" alt=""></a>
+        </div>
+        <hr>
+<div class="aside-nav__user__info">
+            <h4 class="aside-nav__user__title">Minha conta</h4>
+            <ul class="aside-nav__user__info__list">
+<li class="aside-nav__user__info__list__item"><span class="aside-nav__user__info__name" id="menuNmUsuarioLogado"></span></li>
+                <li class="aside-nav__user__info__list__item"><span class="aside-nav__user__info__oab" id="menuUsuarioOabs">OAB: </span></li>
+            </ul>
+<ul class="aside-nav__user__info__list-access">
+<li class="aside-nav__user__info__list-access__item"><a class="aside-nav__user__info__list-access__item__link" href="https://esaj.tjsp.jus.br/esaj/cadastro.do">Meu perfil</a></li>
+                
+                    <li class="aside-nav__user__info__list-access__item"><a class="aside-nav__user__info__list-access__item__link" href="https://esaj.tjsp.jus.br/caixapostal">Caixa Postal</a></li>
+                
+                <li class="aside-nav__user__info__list-access__item"><a class="aside-nav__user__info__list-access__item__link" id="logoutLink" href="#">Sair</a></li>
+            </ul>
+</div>
+    </div>
+</aside><header><link rel="shortcut icon" href="https://esaj.tjsp.jus.br/esaj/tema/padrao/clientes/SP/imagens/favicon.ico" type="image/x-icon">
+<link href="https://esaj.tjsp.jus.br/esaj/app.css" rel="stylesheet" type="text/css">
+<nav class="header__navbar--normal"><a class="header__navbar__menu-hamburger open__aside-nav--left navbar-menu-hamburger__item__link">
+            <span class="menu-hamburger__alert" style="display:none;"></span>
+            <span class="glyph glyph-hamburger"></span>
+        </a>
+
+        <h1 class="header__navbar__title" href="">
+<a class="linkLogo" href="https://esaj.tjsp.jus.br/esaj/redirecionarNovoEsaj.do"><strong>e-SAJ</strong></a> | Consulta de Processos do 1ºGrau</h1>
+
+        <ul class="header__navbar__menu header__navbar__menu--right">
+<li class="header__navbar__menu__item header__navbar__menu__item--initials">
+                <a class="header__navbar__brand__initials" href="http://www.tjsp.jus.br/"> TJSP </a>
+            </li>
+            <li class="header__navbar__menu__item header__navbar__menu__item--user">
+               <span class="header__navbar__name open__aside-nav--right">
+                     <span id="headerNmUsuarioLogado" class="header__navbar__name__text"></span>
+                     <span class="glyph glyph-contact header__navbar__name__icon"></span>
+               </span>
+            </li>
+        </ul></nav></header><div class="offcanvas-backdrop"></div>
+
+
+<script>
+    var dict = {
+        'certificado.tituloCertificadoDigital': 'Certificado digital',
+        'certificado.msgCarregandoCertificado': 'Carregando certificados...',
+        'certificado.msgNenhumCertificadoEncontrado': 'Nenhum certificado encontrado',
+        'certificado.msgErroCarregarCertificado': 'Erro ao carregar certificados',
+        'certificado.msgCertificadoExpirado': '[Expirado]',
+        'certificado.msgCertificadoNaoValido': '[Ainda não válido]',
+        'certificado.msgCertificadoNaoIcpBrasil': '[Não ICP-Brasil]',
+        'certificado.tituloProblemasAoAssinar': 'Falha de comunicação com o dispositivo de assinatura digital',
+
+        'label.contato': 'Contato',
+        'label.identificarSe': 'Identificar-se ',
+
+        'mensagem.aguarde': 'Por favor, aguarde.',
+        'mensagem.paginaNaoCarregada': 'Não foi possível carregar a página.',
+        'mensagem.marcarLido': 'Marcar como lido',
+        'mensagem.registrosSelecionados': 'Registros selecionados',
+        'mensagem.registroJaSelecionado': 'Este registro já está selecionado',
+
+        'mensagem.data.invalida': 'A data digitada é inválida.',
+        'mensagem.data.anoInvalido': 'O ano informado deve ser maior que',
+        'mensagem.data.mesInvalido': 'O mês não pode ser maior que 12.',
+        'mensagem.data.mes': 'O mês',
+        'mensagem.data.mesMaior29dias': 'não pode ter mais que 29 dias.',
+        'mensagem.data.mesMaior28dias': 'não pode ter mais que 28 dias.',
+        'mensagem.data.mesMaior31dias': 'não pode ter mais que 31 dias.',
+        'mensagem.data.mesMaior30dias': 'não pode ter mais que 30 dias.',
+
+        'mensagem.email.invalido': 'O formato do endereço de e-mail não é válido. Verifique se ele tem o formato "usuario@dominio".',
+        'mensagem.email.caracteresInvalidos': 'O endereço de e-mail possui caracteres inválidos',
+        'mensagem.email.usuarioInvalido': 'O formato do usuário informado no endereço de e-mail não é válido.',
+        'mensagem.email.ipInvalido': 'O endereço IP informado no endereço de e-mail não é válido.',
+        'mensagem.email.dominioInvalido': 'O formato do domínio informado no endereço de e-mail não é válido.',
+        'mensagem.email.dominioIncompleto': 'O domínio informado no endereço de e-mail deve possuir pelo menos duas partes. Por exemplo: "usuario@empresa.com.br".',
+
+        'mensagem.texto.tamanhoInvalido': 'O tamanho do texto digitado é maior do que o tamanho permitido. Tamanho permitido:',
+        'mensagem.texto.caracter': 'O caracter',
+        'mensagem.texto.caracterPosicaoInvalida': 'não está permitido na posição',
+
+        'mensagem.numero.numeroInvalido': 'O valor digitado não é um número válido.',
+        'mensagem.numero.numeroNaoPodeCasasDecimais': 'O número não pode conter casas decimais',
+        'mensagem.numero.numeroCasaDecimaisInvalidas': 'O número de casas decimais é inválido. O número pode conter apenas',
+        'mensagem.numero.casaDecimais': 'casas decimais',
+        'mensagem.numero.numeroInteiroInvalido': 'O número de dígitos inteiros é inválido. O número pode conter apenas',
+        'mensagem.numero.digitosInteiros': 'dígitos inteiros',
+        'mensagem.numero.numeroTamanhoInvalido': 'O número digitado não pode ser maior que',
+        'mensagem.numero.numeroZeroInvalido': 'O número digitado deve ser diferente de zero.'
+    }
+</script><script>
+    var appEsajLayout = appEsajLayout || {};
+    appEsajLayout.urlNovoMenuHtml = 'https://esaj.tjsp.jus.br/esaj/menuPortalV2Html.do?servico=190101';
+
+    var appEsajCas = appEsajCas || {};
+    appEsajCas.urlServicoConteudoIdentificacao = 'https://esaj.tjsp.jus.br/sajcas/conteudoIdentificacaoJson?script=1664262091051&retorno=' + encodeURIComponent(location.href);
+</script><script src="https://esaj.tjsp.jus.br/esaj/js/portalV2-bundle.js?n=806192629"></script><script src="https://esaj.tjsp.jus.br/sajcas/seletorVersaoBeta.js?n=36545811-5336-4ca5-bdc8-40745d3efeb9&amp;versao=2"></script><script>
+    function exibirLibras() {
+        document.getElementById("gifLibras").style.display = 'block';
+        var cel1 = document.getElementsByClassName('esajCelulaIdentificacao');
+        var cel2 = document.getElementsByClassName('esajCelulaIdentificacaoServico');
+        mudarPosicao(cel1, 'static');
+        mudarPosicao(cel2, 'static');
+    }
+    function ocultarLibras() {
+        document.getElementById("gifLibras").style.display = 'none';
+        var cel1 = document.getElementsByClassName('esajCelulaIdentificacao');
+        var cel2 = document.getElementsByClassName('esajCelulaIdentificacaoServico');
+        mudarPosicao(cel1, 'relative');
+        mudarPosicao(cel2, 'relative');
+    }
+
+    function mudarPosicao(coll, posicao) {
+        if (!coll) {
+            return;
+        }
+        for (var i = 0, len = coll.length; i < len; i++) {
+            coll[i].style["position"] = posicao;
+        }
+    }
+</script><div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle tituloDoBloco">Partes do processo</h2>
+		
+	
+</div>
+
+<!--  cabecalho da tabela de lista (partes) -->
+
+
+<!--  dados da lista partes principais (partes) -->
+<table id="tablePartesPrincipais" style="margin-left:15px; margin-top:1px;" align="center" border="0" cellpadding="0" cellspacing="0" width="98%">
+<tr class="fundoClaro">
+<td valign="top" width="141" style="padding-bottom: 5px" class="label">
+		<span class="mensagemExibindo tipoDeParticipacao">Reqte </span>
+	</td>
+	<td class="nomeParteEAdvogado" width="*" align="left" style="padding-bottom: 5px">
+		
+			
+				
+				
+					Luis Antonio Aguiar 06626733870
+				
+			
+
+			
+		 
+		
+			
+				<br><span class="mensagemExibindo">Advogado: </span>
+				
+					
+					
+						Icaro Etone Dutra da Cunha Rinaldo
+					
+				 
+				
+			
+		
+		
+			<br><span class="mensagemExibindo">Reprtate: </span>
+			Luis Antonio Aguiar 
+	  
+	</td>
+</tr>
+<tr class="fundoClaro">
+<td valign="top" width="141" style="padding-bottom: 5px" class="label">
+		<span class="mensagemExibindo tipoDeParticipacao">Reqdo </span>
+	</td>
+	<td class="nomeParteEAdvogado" width="*" align="left" style="padding-bottom: 5px">
+		
+			
+				
+				
+					Banco Votorantim S/A
+				
+			
+
+			
+		 
+		
+			
+				<br><span class="mensagemExibindo">Advogado: </span>
+				
+					
+					
+						Paulo Roberto Joaquim dos Reis
+					
+				 
+				
+			
+		
+		
+	</td>
+</tr>
+</table>
+<div style="padding-top: 10px;">
+	
+	
+		
+		
+		
+		
+	
+
+	
+		
+		
+			<h2 class="subtitle tituloDoBloco">Movimentações</h2>
+		
+	
+</div>
+
+
+ 
+	
+
+<table style="margin-left:15px; margin-top:1px;" align="center" border="0" cellpadding="0" cellspacing="0" width="98%">
+<thead>
+<tr>
+<th width="120" class="label" style="vertical-align: bottom">Data</th>
+				  <th valign="middle" width="20" aria-hidden="true"> </th>
+				  <th valign="middle" class="label">Movimento</th>
+				</tr>
+<tr class="fundoEscuro" height="2" aria-hidden="true">
+<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+</thead>
+<tbody id="tabelaUltimasMovimentacoes">
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			12/09/2022
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Petição Juntada
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Nº Protocolo: WOLI.22.70048389-8
+Tipo da Petição: Petições Diversas
+Data: 12/09/2022 09:44
+
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			26/05/2022
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Petição Juntada
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Nº Protocolo: WOLI.22.70026412-6
+Tipo da Petição: Petições Diversas
+Data: 26/05/2022 12:29
+
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			23/09/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Remetidos os Autos para o Tribunal de Justiça/Colégio Recursal - Processo Digital
+				
+			
+			
+			<br><span style="font-style: italic;">
+				
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			23/09/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+				
+					
+					
+						
+					
+				
+
+				<a class="linkMovVincProc" id="linkMovVincProc-62051073" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=62051073&amp;nmRecursoAcessado=Certid%C3%A3o+de+Cart%C3%B3rio+Expedida">
+					<img width="16" height="16" border="0" src="/cpopg/imagens/doc.png"></a>
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+					<a class="linkMovVincProc" id="linkMovVincProc-2-62051073" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=62051073&amp;nmRecursoAcessado=Certid%C3%A3o+de+Cart%C3%B3rio+Expedida"> Certidão de Cartório Expedida
+					</a>
+				
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Certidão 2 - Com Remessa de Autos
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			09/09/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Contrarrazões Juntada
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Nº Protocolo: WOLI.21.70043989-8
+Tipo da Petição: Contrarrazões de Apelação
+Data: 09/09/2021 22:12
+
+			</span>
+			
+		</td>
+	</tr>
+</tbody>
+<tbody style="display: none;" id="tabelaTodasMovimentacoes">
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			12/09/2022
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Petição Juntada
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Nº Protocolo: WOLI.22.70048389-8
+Tipo da Petição: Petições Diversas
+Data: 12/09/2022 09:44
+
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			26/05/2022
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Petição Juntada
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Nº Protocolo: WOLI.22.70026412-6
+Tipo da Petição: Petições Diversas
+Data: 26/05/2022 12:29
+
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			23/09/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Remetidos os Autos para o Tribunal de Justiça/Colégio Recursal - Processo Digital
+				
+			
+			
+			<br><span style="font-style: italic;">
+				
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			23/09/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+				
+					
+					
+						
+					
+				
+
+				<a class="linkMovVincProc" id="linkMovVincProc-62051073" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=62051073&amp;nmRecursoAcessado=Certid%C3%A3o+de+Cart%C3%B3rio+Expedida">
+					<img width="16" height="16" border="0" src="/cpopg/imagens/doc.png"></a>
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+					<a class="linkMovVincProc" id="linkMovVincProc-2-62051073" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=62051073&amp;nmRecursoAcessado=Certid%C3%A3o+de+Cart%C3%B3rio+Expedida"> Certidão de Cartório Expedida
+					</a>
+				
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Certidão 2 - Com Remessa de Autos
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			09/09/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Contrarrazões Juntada
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Nº Protocolo: WOLI.21.70043989-8
+Tipo da Petição: Contrarrazões de Apelação
+Data: 09/09/2021 22:12
+
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			16/08/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Certidão de Publicação Expedida
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Relação :0718/2021
+Data da Disponibilização: 16/08/2021
+Data da Publicação: 17/08/2021
+Número do Diário: 3341
+Página: 2426/2442
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			13/08/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Remetido ao DJE
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Relação: 0718/2021
+Teor do ato: Certifico e dou fé que pratiquei o ato ordinatório abaixo discriminado, nos termos do Art.203, §4º, do Código de Processo Civil, e dos artigos 195 e 196, ambos das Normas de Serviço da Corregedoria. Vistas dos autos aos interessados para: (x) considerando a apresentação do recurso de apelação, nos termos do §1º, do Art.1.010, do CPC, e Art.196, inciso XXVIII, das NSCGJ, fica concedido o prazo de 15 dias, a contar da publicação deste ato, para a parte contrária apresentar contrarrazões. Após, os autos serão encaminhados ao Egrégio Tribunal de Justiça do Estado de São Paulo - Seção de Direito Privado - Sala 44, nos termos do §3º, do Art.1.010, do CPC, e nos termos do Comunicado CG nº916/2016 (DJE de 23/06/16, p.9). Nos termos do inciso VI, do Art.102, o §6º, do Art.1093, e o §1º, do Art.1.275, todos das NSCGJ, e também nos termos do Comunicado CG 136/2020 (vide DJE de 09/03/2020, pp.58/59), observa-se que: (X) o valor do preparo recursal devido é de R$618,09; (X) o valor do preparo recursal recolhido é de R$789,71;
+Advogados(s): Paulo Roberto Joaquim dos Reis (OAB 23134/SP), Icaro Etone Dutra da Cunha Rinaldo (OAB 375079/SP)
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			13/08/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+				
+					
+					
+						
+					
+				
+
+				<a class="linkMovVincProc" id="linkMovVincProc-61239366" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=61239366&amp;nmRecursoAcessado=Ato+Ordinat%C3%B3rio+-+Intima%C3%A7%C3%A3o+-+DJE">
+					<img width="16" height="16" border="0" src="/cpopg/imagens/doc.png"></a>
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+					<a class="linkMovVincProc" id="linkMovVincProc-2-61239366" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=61239366&amp;nmRecursoAcessado=Ato+Ordinat%C3%B3rio+-+Intima%C3%A7%C3%A3o+-+DJE"> Ato Ordinatório - Intimação - DJE
+					</a>
+				
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Certifico e dou fé que pratiquei o ato ordinatório abaixo discriminado, nos termos do Art.203, §4º, do Código de Processo Civil, e dos artigos 195 e 196, ambos das Normas de Serviço da Corregedoria. Vistas dos autos aos interessados para: (x) considerando a apresentação do recurso de apelação, nos termos do §1º, do Art.1.010, do CPC, e Art.196, inciso XXVIII, das NSCGJ, fica concedido o prazo de 15 dias, a contar da publicação deste ato, para a parte contrária apresentar contrarrazões. Após, os autos serão encaminhados ao Egrégio Tribunal de Justiça do Estado de São Paulo - Seção de Direito Privado - Sala 44, nos termos do §3º, do Art.1.010, do CPC, e nos termos do Comunicado CG nº916/2016 (DJE de 23/06/16, p.9). Nos termos do inciso VI, do Art.102, o §6º, do Art.1093, e o §1º, do Art.1.275, todos das NSCGJ, e também nos termos do Comunicado CG 136/2020 (vide DJE de 09/03/2020, pp.58/59), observa-se que: (X) o valor do preparo recursal devido é de R$618,09; (X) o valor do preparo recursal recolhido é de R$789,71;
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			13/08/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Guia Juntada
+				
+			
+			
+			<br><span style="font-style: italic;">
+				
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			13/08/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+				
+					
+					
+						
+					
+				
+
+				<a class="linkMovVincProc" id="linkMovVincProc-61239148" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=61239148&amp;nmRecursoAcessado=Certid%C3%A3o+de+Cart%C3%B3rio+Expedida">
+					<img width="16" height="16" border="0" src="/cpopg/imagens/doc.png"></a>
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+					<a class="linkMovVincProc" id="linkMovVincProc-2-61239148" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=61239148&amp;nmRecursoAcessado=Certid%C3%A3o+de+Cart%C3%B3rio+Expedida"> Certidão de Cartório Expedida
+					</a>
+				
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Certidão 1 - Genérica
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			13/08/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Apelação/Razões Juntada
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Nº Protocolo: WOLI.21.70039157-7
+Tipo da Petição: Razões de Apelação
+Data: 13/08/2021 11:20
+
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			22/07/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Certidão de Publicação Expedida
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Relação :0644/2021
+Data da Disponibilização: 22/07/2021
+Data da Publicação: 23/07/2021
+Número do Diário: 3324
+Página: 2477/2486
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			21/07/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Remetido ao DJE
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Relação: 0644/2021
+Teor do ato: Ante o exposto, considerando que não estavam presentes os requisitos de admissibilidade do recurso (omissão, contradição, obscuridade e/ou erro material), NÃO CONHEÇO dos embargos. Mantenho a sentença de fls.166/182 nos seus próprios fundamentos. No prazo de 15 dias a contar da publicação desta decisão no DJE, a(s) parte(s) requerida/embargante deverá(ão) comprovar o recolhimento da multa (Guia FEDTJ Valor R$1.900,00 cód.442-1 Multas Processuais nos termos da Portaria SOF 9349/2016, DJE de 25/10/2016, p.01). Caso não seja realizado o pagamento no prazo, haverá incidência de juros e correção, conforme exposto acima. Persistindo a inadimplência, após o decurso do prazo recursal em face desta decisão a Secretaria Judicial deverá proceder à comunicação eletrônica para emissão da certidão de dívida ativa [conforme Comunicado Conjunto 1303/2019 (DJE de 26/08/2019, p.04/07) sistema integrado com a Procuradoria Geral do Estado de São Paulo, observando-se o modelo de certidão mencionado no Comunicado Conjunto 589/2020 (DJE de 03/03/2021, p.04)]. Int.
+Advogados(s): Paulo Roberto Joaquim dos Reis (OAB 23134/SP), Icaro Etone Dutra da Cunha Rinaldo (OAB 375079/SP)
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			20/07/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+				
+					
+					
+						
+					
+				
+
+				<a class="linkMovVincProc" id="linkMovVincProc-60721309" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=60721309&amp;nmRecursoAcessado=Embargos+de+Declara%C3%A7%C3%A3o+N%C3%A3o-Conhecidos">
+					<img width="16" height="16" border="0" src="/cpopg/imagens/doc.png"></a>
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+					<a class="linkMovVincProc" id="linkMovVincProc-2-60721309" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=60721309&amp;nmRecursoAcessado=Embargos+de+Declara%C3%A7%C3%A3o+N%C3%A3o-Conhecidos"> Embargos de Declaração Não-Conhecidos
+					</a>
+				
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Ante o exposto, considerando que não estavam presentes os requisitos de admissibilidade do recurso (omissão, contradição, obscuridade e/ou erro material), NÃO CONHEÇO dos embargos. Mantenho a sentença de fls.166/182 nos seus próprios fundamentos. No prazo de 15 dias a contar da publicação desta decisão no DJE, a(s) parte(s) requerida/embargante deverá(ão) comprovar o recolhimento da multa (Guia FEDTJ Valor R$1.900,00 cód.442-1 Multas Processuais nos termos da Portaria SOF 9349/2016, DJE de 25/10/2016, p.01). Caso não seja realizado o pagamento no prazo, haverá incidência de juros e correção, conforme exposto acima. Persistindo a inadimplência, após o decurso do prazo recursal em face desta decisão a Secretaria Judicial deverá proceder à comunicação eletrônica para emissão da certidão de dívida ativa [conforme Comunicado Conjunto 1303/2019 (DJE de 26/08/2019, p.04/07) sistema integrado com a Procuradoria Geral do Estado de São Paulo, observando-se o modelo de certidão mencionado no Comunicado Conjunto 589/2020 (DJE de 03/03/2021, p.04)]. Int.
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			05/07/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Conclusos para Decisão
+				
+			
+			
+			<br><span style="font-style: italic;">
+				
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			05/07/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Embargos de Declaração Juntados
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Nº Protocolo: WOLI.21.70031741-5
+Tipo da Petição: Embargos de Declaração
+Data: 05/07/2021 10:42
+
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			28/06/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Certidão de Publicação Expedida
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Relação :0566/2021
+Data da Disponibilização: 28/06/2021
+Data da Publicação: 29/06/2021
+Número do Diário: 3307
+Página: 2325/2337
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			25/06/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Remetido ao DJE
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Relação: 0566/2021
+Teor do ato: Ante o exposto, com resolução do mérito, nos termos do Art.487, inciso I, do Código de Processo Civil, ACOLHO PARCIALMENTE o(s) pedido(s) formulado(s), e o faço para: (a) confirmar a liminar; (b) declarar a inexistência do débito (referente à cobrança do carnê emitido pelo Banco Votorantim no valor total de R$77.729,76); (c) condenar a(s) parte(s) requerida(s) no pagamento de R$15.000,00 à(s) parte(s) requerente(s), a título indenização por danos morais, com incidência de juros legais de 1% ao mês além de correção monetária de acordo com a tabela prática do TJSP, incidindo ambos (juros e correção) a partir desta data (conforme fundamentação acima). Conforme índices e valores fixados acima, custas e honorários pela(s) parte(s) requerida(s). Frise-se, conforme exposto acima, que: (a) a(s) parte(s) vencida(s) [requerida] deverá(ã) realizar o pagamento assim que o feito transitar em julgado (ou antes evitando a incidência de juros/correção, conforme o caso), observando-se o procedimento acima, ficando reiterada a advertência que, se não pagar a dívida voluntariamente, será responsabilizada, no mínimo, pelas custas do cumprimento; (b) caso a(s) parte(s) vencida(s) não cumpra o item anterior (a), a(s) parte(s) vencedora(s) [autora] deverá(ão), no momento oportuno (após o trânsito em julgado), observar o procedimento correto para o início do cumprimento de sentença, conforme exposto acima. P.I.C. Após as cautelas de praxe, arquivem-se.
+Advogados(s): Paulo Roberto Joaquim dos Reis (OAB 23134/SP), Icaro Etone Dutra da Cunha Rinaldo (OAB 375079/SP)
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			24/06/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+				
+					
+					
+						
+					
+				
+
+				<a class="linkMovVincProc" id="linkMovVincProc-60209916" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=60209916&amp;nmRecursoAcessado=Julgada+Procedente+em+Parte+a+A%C3%A7%C3%A3o">
+					<img width="16" height="16" border="0" src="/cpopg/imagens/doc.png"></a>
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+					<a class="linkMovVincProc" id="linkMovVincProc-2-60209916" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=60209916&amp;nmRecursoAcessado=Julgada+Procedente+em+Parte+a+A%C3%A7%C3%A3o"> Julgada Procedente em Parte a Ação
+					</a>
+				
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Ante o exposto, com resolução do mérito, nos termos do Art.487, inciso I, do Código de Processo Civil, ACOLHO PARCIALMENTE o(s) pedido(s) formulado(s), e o faço para: (a) confirmar a liminar; (b) declarar a inexistência do débito (referente à cobrança do carnê emitido pelo Banco Votorantim no valor total de R$77.729,76); (c) condenar a(s) parte(s) requerida(s) no pagamento de R$15.000,00 à(s) parte(s) requerente(s), a título indenização por danos morais, com incidência de juros legais de 1% ao mês além de correção monetária de acordo com a tabela prática do TJSP, incidindo ambos (juros e correção) a partir desta data (conforme fundamentação acima). Conforme índices e valores fixados acima, custas e honorários pela(s) parte(s) requerida(s). Frise-se, conforme exposto acima, que: (a) a(s) parte(s) vencida(s) [requerida] deverá(ã) realizar o pagamento assim que o feito transitar em julgado (ou antes evitando a incidência de juros/correção, conforme o caso), observando-se o procedimento acima, ficando reiterada a advertência que, se não pagar a dívida voluntariamente, será responsabilizada, no mínimo, pelas custas do cumprimento; (b) caso a(s) parte(s) vencida(s) não cumpra o item anterior (a), a(s) parte(s) vencedora(s) [autora] deverá(ão), no momento oportuno (após o trânsito em julgado), observar o procedimento correto para o início do cumprimento de sentença, conforme exposto acima. P.I.C. Após as cautelas de praxe, arquivem-se.
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			23/04/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Conclusos para Sentença
+				
+			
+			
+			<br><span style="font-style: italic;">
+				
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			23/04/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Réplica Juntada
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Nº Protocolo: WOLI.21.70018658-2
+Tipo da Petição: Manifestação Sobre a Contestação
+Data: 23/04/2021 10:28
+
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			14/04/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Suspensão do Prazo
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Prazo referente ao usuário foi alterado para 30/04/2021 devido à alteração da tabela de feriados
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			30/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+				
+					
+					
+						
+					
+				
+
+				<a class="linkMovVincProc" id="linkMovVincProc-58489995" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=58489995&amp;nmRecursoAcessado=Certid%C3%A3o+de+Cart%C3%B3rio+Expedida">
+					<img width="16" height="16" border="0" src="/cpopg/imagens/doc.png"></a>
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+					<a class="linkMovVincProc" id="linkMovVincProc-2-58489995" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=58489995&amp;nmRecursoAcessado=Certid%C3%A3o+de+Cart%C3%B3rio+Expedida"> Certidão de Cartório Expedida
+					</a>
+				
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Certidão 11 - queima de guia DARE recolhida após 01-03-2017
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			30/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Petição Juntada
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Nº Protocolo: WOLI.21.70014841-9
+Tipo da Petição: Petições Diversas
+Data: 30/03/2021 11:16
+
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			30/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Certidão de Publicação Expedida
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Relação :0277/2021
+Data da Disponibilização: 30/03/2021
+Data da Publicação: 31/03/2021
+Número do Diário: 3248
+Página: 2366/2373
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			29/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Remetido ao DJE
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Relação: 0277/2021
+Teor do ato: Certifico e dou fé que pratiquei o ato ordinatório abaixo discriminado, nos termos do Art.203, §4º, do Código de Processo Civil, e dos artigos 195 e 196, ambos das Normas de Serviço da Corregedoria. Os autos aguardam a(s) parte(s) autor(as): (x) manifestar-se, em 15 dias, sobre a contestação (arts. 350 e 351 do CPC).
+Advogados(s): Paulo Roberto Joaquim dos Reis (OAB 23134/SP), Icaro Etone Dutra da Cunha Rinaldo (OAB 375079/SP)
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			26/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+				
+					
+					
+						
+					
+				
+
+				<a class="linkMovVincProc" id="linkMovVincProc-58422399" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=58422399&amp;nmRecursoAcessado=Ato+Ordinat%C3%B3rio+-+Intima%C3%A7%C3%A3o+-+DJE">
+					<img width="16" height="16" border="0" src="/cpopg/imagens/doc.png"></a>
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+					<a class="linkMovVincProc" id="linkMovVincProc-2-58422399" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=58422399&amp;nmRecursoAcessado=Ato+Ordinat%C3%B3rio+-+Intima%C3%A7%C3%A3o+-+DJE"> Ato Ordinatório - Intimação - DJE
+					</a>
+				
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Certifico e dou fé que pratiquei o ato ordinatório abaixo discriminado, nos termos do Art.203, §4º, do Código de Processo Civil, e dos artigos 195 e 196, ambos das Normas de Serviço da Corregedoria. Os autos aguardam a(s) parte(s) autor(as): (x) manifestar-se, em 15 dias, sobre a contestação (arts. 350 e 351 do CPC).
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			26/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Contestação Juntada
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Nº Protocolo: WOLI.21.70014159-7
+Tipo da Petição: Contestação
+Data: 26/03/2021 09:45
+
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			23/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Recebidos os Autos do Centro Jud. de Solução de Conflitos e Cidadania
+				
+			
+			
+			<br><span style="font-style: italic;">
+				
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			23/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+				
+					
+					
+						
+					
+				
+
+				<a class="linkMovVincProc" id="linkMovVincProc-58347438" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=58347438&amp;nmRecursoAcessado=Audi%C3%AAncia+Realizada">
+					<img width="16" height="16" border="0" src="/cpopg/imagens/doc.png"></a>
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+					<a class="linkMovVincProc" id="linkMovVincProc-2-58347438" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=58347438&amp;nmRecursoAcessado=Audi%C3%AAncia+Realizada"> Audiência Realizada
+					</a>
+				
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Termo de Audiência - CEJUSC - Sessão Virtual modelo agosto-2020
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			22/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+				
+					
+					
+						
+					
+				
+
+				<a class="linkMovVincProc" id="linkMovVincProc-58296605" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=58296605&amp;nmRecursoAcessado=Certid%C3%A3o+de+Cart%C3%B3rio+Expedida">
+					<img width="16" height="16" border="0" src="/cpopg/imagens/doc.png"></a>
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+					<a class="linkMovVincProc" id="linkMovVincProc-2-58296605" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=58296605&amp;nmRecursoAcessado=Certid%C3%A3o+de+Cart%C3%B3rio+Expedida"> Certidão de Cartório Expedida
+					</a>
+				
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Certidão - Genérica
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			18/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Remetidos os Autos para o Centro Jud. de Solução de Conflitos e Cidadania
+				
+			
+			
+			<br><span style="font-style: italic;">
+				
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			18/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+				
+					
+					
+						
+					
+				
+
+				<a class="linkMovVincProc" id="linkMovVincProc-58250870" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=58250870&amp;nmRecursoAcessado=Certid%C3%A3o+de+Cart%C3%B3rio+Expedida">
+					<img width="16" height="16" border="0" src="/cpopg/imagens/doc.png"></a>
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+					<a class="linkMovVincProc" id="linkMovVincProc-2-58250870" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=58250870&amp;nmRecursoAcessado=Certid%C3%A3o+de+Cart%C3%B3rio+Expedida"> Certidão de Cartório Expedida
+					</a>
+				
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Certidão - Genérica
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			18/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Certidão de Publicação Expedida
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Relação :0236/2021
+Data da Disponibilização: 18/03/2021
+Data da Publicação: 19/03/2021
+Número do Diário: 3240
+Página: 2357/2358
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			17/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Remetido ao DJE
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Relação: 0236/2021
+Teor do ato: Certifico e dou fé que pratiquei o ato ordinatório abaixo discriminado, nos termos do Art.203, §4º, do Código de Processo Civil, e dos artigos 195 e 196, ambos das Normas de Serviço da Corregedoria. Os autos aguardam a(s) parte(s) requerida(as): (x) comprovar o recolhimento, em 05 dias, da taxa da CPA (Carteira de Previdência da Ordem dos Advogados do Brasil), no valor de 2% do maior salário mínimo vigente (Nacional ou Estadual, se o caso) por outorgante (Guia DARE cód. 304-9).
+Advogados(s): Paulo Roberto Joaquim dos Reis (OAB 23134/SP), Icaro Etone Dutra da Cunha Rinaldo (OAB 375079/SP)
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			16/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+				
+					
+					
+						
+					
+				
+
+				<a class="linkMovVincProc" id="linkMovVincProc-58178327" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=58178327&amp;nmRecursoAcessado=Ato+Ordinat%C3%B3rio+-+Intima%C3%A7%C3%A3o+-+DJE">
+					<img width="16" height="16" border="0" src="/cpopg/imagens/doc.png"></a>
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+					<a class="linkMovVincProc" id="linkMovVincProc-2-58178327" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=58178327&amp;nmRecursoAcessado=Ato+Ordinat%C3%B3rio+-+Intima%C3%A7%C3%A3o+-+DJE"> Ato Ordinatório - Intimação - DJE
+					</a>
+				
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Certifico e dou fé que pratiquei o ato ordinatório abaixo discriminado, nos termos do Art.203, §4º, do Código de Processo Civil, e dos artigos 195 e 196, ambos das Normas de Serviço da Corregedoria. Os autos aguardam a(s) parte(s) requerida(as): (x) comprovar o recolhimento, em 05 dias, da taxa da CPA (Carteira de Previdência da Ordem dos Advogados do Brasil), no valor de 2% do maior salário mínimo vigente (Nacional ou Estadual, se o caso) por outorgante (Guia DARE cód. 304-9).
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			16/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+				
+					
+					
+						
+					
+				
+
+				<a class="linkMovVincProc" id="linkMovVincProc-58178081" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=58178081&amp;nmRecursoAcessado=Certid%C3%A3o+de+Cart%C3%B3rio+Expedida">
+					<img width="16" height="16" border="0" src="/cpopg/imagens/doc.png"></a>
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+					<a class="linkMovVincProc" id="linkMovVincProc-2-58178081" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=58178081&amp;nmRecursoAcessado=Certid%C3%A3o+de+Cart%C3%B3rio+Expedida"> Certidão de Cartório Expedida
+					</a>
+				
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Certidão 1 - Genérica
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			16/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Procuração/substabelecimento  Juntada
+				
+			
+			
+			<br><span style="font-style: italic;">
+				
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			16/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Procuração/substabelecimento  Juntada
+				
+			
+			
+			<br><span style="font-style: italic;">
+				
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			16/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Procuração/substabelecimento  Juntada
+				
+			
+			
+			<br><span style="font-style: italic;">
+				
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			16/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Petição Juntada
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Nº Protocolo: WOLI.21.70012017-4
+Tipo da Petição: Petições Diversas
+Data: 16/03/2021 12:06
+
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			16/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Certidão de Publicação Expedida
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Relação :0226/2021
+Data da Disponibilização: 16/03/2021
+Data da Publicação: 17/03/2021
+Número do Diário: 3238
+Página: 2289/2303
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			15/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Remetido ao DJE
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Relação: 0226/2021
+Teor do ato: Vistos. 1. Nos termos dos Provimentos do TJSP (2.563/2020, 2.564/2020, 2.575/2020, 2.580/2020, 2.583/2020, 2.587/2021, 2596/2021 e 2600/2021), Comunicado CG 284/2020 do TJSP e Resolução do CNJ (322/2020)], ficam advertidas as Partes que a sessão de conciliação/mediação, designada para o próximo dia 23/03/2021, às 15:10 horas (vide decisão de fls.68/71), será realizada nos termos do Comunicado 384/2020 da E. Corregedoria Geral da Justiça (telepresencial). 1.1. Não custa lembrar, também, trecho do Ato Normativo do NUPEMEC 01/2020: Art. 2º A sessão realizada por videoconferência equivale à sessão presencial para todos os efeitos legais (vide DJE de 02/07/2020, pp.04/06). 1.2. Nesse contexto, surge a necessidade de as partes providenciarem desde já o que é necessário para a realização do ato de modo virtual. Sobre o tema é preciso destacar que o Provimento 2.557/2020 do Conselho Superior da Magistratura do TJSP, baseado na regulamentação do Conselho Nacional de Justiça, dispensa a anuência das partes no que tange à realização de audiências em meio virtual. Vale citar trecho do ato normativo: "... CONSIDERANDO que a regra do art. 6º, §3º, da Resolução CNJ no 314/2020, não condiciona a realização das audiências por videoconferência em primeiro grau de jurisdição, durante o período do Sistema Remoto de Trabalho, ao prévio consentimento das partes; RESOLVE: Art. 1º. O §4º do art. 2º do Provimento CSM no 2554/2020 passa a contar com a seguinte redação: Art. 2º... §4º. Poderão ser realizadas audiências por videoconferência, observada, nesse caso, a possibilidade de intimação e de participação das partes e testemunhas no ato, por meio do link de acesso da gravação junto ao Microsoft OneDrive, a ser disponibilizado pelo juízo, observadas as demais disposições dos Comunicados CG nº 284/2020 e nº 323/2020. 2. O ato será realizado de acordo com o §4º, do Art.2, do Provimento CSM nº2.554/2020, e com o Comunicado CG 284/2020. Vale destacar alguns procedimentos, que bem resumem como será realizado o ato: (a) a audiência será realizada pelo link de acesso à reunião virtual, enviado ao endereço eletrônico de todos os participantes, o que é suficiente para o ingresso na audiência virtual; (b) há necessidade de Advogados e Partes possuírem dispositivo com acesso à internet (de preferência wi-fi) e câmera, podendo se tratar de dispositivo móvel (celular com câmera) e ou computador com webcam (notebook ou desktop); (c) recomenda-se que Advogados e Partes baixem, em seus respectivos dispositivos (computador ou celular), o aplicativo Microsoft TEAMS (gratuito) no seguinte endereço: https://www.microsoft.com/pt-br/microsoft-365/microsoft-teams/download-app (é por esse aplicativo que as audiências por videoconferência são realizadas, bem como seus respectivos testes), lembrando que o acesso é muito simples e mesmo pessoas sem conhecimento de informática conseguem clicar no link e acessar a plataforma; (d) não há impedimento processual para o Advogado participar da sessão juntamente com a parte em seu escritório; (e) o manual de participação em audiências virtuais está disponível em: http://www.tjsp.jus.br/CapacitacaoSistemas/CapacitacaoSistemas/ComoFazer (Audiência Virtual - Participar de uma Audiência Virtual). 3. Encaminhem-se os autos ao CEJUSC para que inicie os preparativos (envio de e-mails às partes e Advogados, realização de eventuais testes etc.). Caso a parte não tenha e-mail, o agendamento (com o lynk) será enviado apenas ao Procurador da parte, não gerando qualquer nulidade, afinal é quem representa a parte em Juízo e tem o dever de comunicar seu cliente sobre a realização do ato, observadas as ressalvas do(s) item(ns) 2.2 da decisão de fls.68/77 (impossibilidade de acumulação das funções de Advogado e Representante da Parte). Fica desde já indeferido qualquer pedido de redesignação. 4. Sem prejuízo do acima determinado, fica o Banco Votorantim SA intimado para, também no prazo acima, apresente documento idôneo comprovando a sucessão do BV Financeira SA Crédito, Financiamento e Investimento, a fim de possibilitar a análise do requerimento de retificação do polo passivo de p.91/92. Int.
+Advogados(s): Icaro Etone Dutra da Cunha Rinaldo (OAB 375079/SP)
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			12/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+				
+					
+					
+						
+					
+				
+
+				<a class="linkMovVincProc" id="linkMovVincProc-58112291" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=58112291&amp;nmRecursoAcessado=Decis%C3%A3o">
+					<img width="16" height="16" border="0" src="/cpopg/imagens/doc.png"></a>
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+					<a class="linkMovVincProc" id="linkMovVincProc-2-58112291" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=58112291&amp;nmRecursoAcessado=Decis%C3%A3o"> Decisão
+					</a>
+				
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Vistos. 1. Nos termos dos Provimentos do TJSP (2.563/2020, 2.564/2020, 2.575/2020, 2.580/2020, 2.583/2020, 2.587/2021, 2596/2021 e 2600/2021), Comunicado CG 284/2020 do TJSP e Resolução do CNJ (322/2020)], ficam advertidas as Partes que a sessão de conciliação/mediação, designada para o próximo dia 23/03/2021, às 15:10 horas (vide decisão de fls.68/71), será realizada nos termos do Comunicado 384/2020 da E. Corregedoria Geral da Justiça (telepresencial). 1.1. Não custa lembrar, também, trecho do Ato Normativo do NUPEMEC 01/2020: Art. 2º A sessão realizada por videoconferência equivale à sessão presencial para todos os efeitos legais (vide DJE de 02/07/2020, pp.04/06). 1.2. Nesse contexto, surge a necessidade de as partes providenciarem desde já o que é necessário para a realização do ato de modo virtual. Sobre o tema é preciso destacar que o Provimento 2.557/2020 do Conselho Superior da Magistratura do TJSP, baseado na regulamentação do Conselho Nacional de Justiça, dispensa a anuência das partes no que tange à realização de audiências em meio virtual. Vale citar trecho do ato normativo: "... CONSIDERANDO que a regra do art. 6º, §3º, da Resolução CNJ no 314/2020, não condiciona a realização das audiências por videoconferência em primeiro grau de jurisdição, durante o período do Sistema Remoto de Trabalho, ao prévio consentimento das partes; RESOLVE: Art. 1º. O §4º do art. 2º do Provimento CSM no 2554/2020 passa a contar com a seguinte redação: Art. 2º... §4º. Poderão ser realizadas audiências por videoconferência, observada, nesse caso, a possibilidade de intimação e de participação das partes e testemunhas no ato, por meio do link de acesso da gravação junto ao Microsoft OneDrive, a ser disponibilizado pelo juízo, observadas as demais disposições dos Comunicados CG nº 284/2020 e nº 323/2020. 2. O ato será realizado de acordo com o §4º, do Art.2, do Provimento CSM nº2.554/2020, e com o Comunicado CG 284/2020. Vale destacar alguns procedimentos, que bem resumem como será realizado o ato: (a) a audiência será realizada pelo link de acesso à reunião virtual, enviado ao endereço eletrônico de todos os participantes, o que é suficiente para o ingresso na audiência virtual; (b) há necessidade de Advogados e Partes possuírem dispositivo com acesso à internet (de preferência wi-fi) e câmera, podendo se tratar de dispositivo móvel (celular com câmera) e ou computador com webcam (notebook ou desktop); (c) recomenda-se que Advogados e Partes baixem, em seus respectivos dispositivos (computador ou celular), o aplicativo Microsoft TEAMS (gratuito) no seguinte endereço: https://www.microsoft.com/pt-br/microsoft-365/microsoft-teams/download-app (é por esse aplicativo que as audiências por videoconferência são realizadas, bem como seus respectivos testes), lembrando que o acesso é muito simples e mesmo pessoas sem conhecimento de informática conseguem clicar no link e acessar a plataforma; (d) não há impedimento processual para o Advogado participar da sessão juntamente com a parte em seu escritório; (e) o manual de participação em audiências virtuais está disponível em: http://www.tjsp.jus.br/CapacitacaoSistemas/CapacitacaoSistemas/ComoFazer (Audiência Virtual - Participar de uma Audiência Virtual). 3. Encaminhem-se os autos ao CEJUSC para que inicie os preparativos (envio de e-mails às partes e Advogados, realização de eventuais testes etc.). Caso a parte não tenha e-mail, o agendamento (com o lynk) será enviado apenas ao Procurador da parte, não gerando qualquer nulidade, afinal é quem representa a parte em Juízo e tem o dever de comunicar seu cliente sobre a realização do ato, observadas as ressalvas do(s) item(ns) 2.2 da decisão de fls.68/77 (impossibilidade de acumulação das funções de Advogado e Representante da Parte). Fica desde já indeferido qualquer pedido de redesignação. 4. Sem prejuízo do acima determinado, fica o Banco Votorantim SA intimado para, também no prazo acima, apresente documento idôneo comprovando a sucessão do BV Financeira SA Crédito, Financiamento e Investimento, a fim de possibilitar a análise do requerimento de retificação do polo passivo de p.91/92. Int.
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			12/03/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Conclusos para Despacho
+				
+			
+			
+			<br><span style="font-style: italic;">
+				
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			16/02/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Suspensão do Prazo
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Prazo referente ao usuário foi alterado para 17/03/2021 devido à alteração da tabela de feriados
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			02/02/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					AR Positivo Juntado
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Juntada de AR : AR204864815TJ
+Situação : Cumprido
+Modelo : Processo Digital - Carta - Citação e Intimação - Audiência de Conciliação-Mediação no CEJUSC-Setor de Conciliação - Rito Comum - NOVO CPC
+Destinatário : Banco Votorantim S/A
+Diligência : 26/01/2021
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			28/01/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Petição Juntada
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Nº Protocolo: WOLI.21.70003228-3
+Tipo da Petição: Petições Diversas
+Data: 28/01/2021 13:13
+
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			22/01/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Petição Juntada
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Nº Protocolo: WOLI.21.70002267-9
+Tipo da Petição: Petição Intermediária
+Data: 22/01/2021 16:16
+
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			20/01/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Certidão de Publicação Expedida
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Relação :0044/2021
+Data da Disponibilização: 20/01/2021
+Data da Publicação: 21/01/2021
+Número do Diário: 3200
+Página: 1235/1248
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			19/01/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Remetido ao DJE
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Relação: 0044/2021
+Teor do ato: Vistos. 1. Uma vez preenchidos os requisitos legais, recebo a petição inicial. 2. Nos termos do Art.334 do Código de Processo Civil (CPC), designo o dia 23/03/2021, às 15:10 horas para audiência de conciliação/mediação. Contestação poderá ser oferecida no prazo de 15 dias, contados da data da audiência, caso não haja acordo, ressalvada a hipótese do inciso II, do Art.335 do mencionado Código, sob pena de revelia. A sessão de conciliação será realizada no CENTRO JUDICIÁRIO DE SOLUÇÃO DE CONFLITOS E CIDADANIA (CEJUSC) no seguinte endereço: Rua Duque de Caxias, 554, Centro, Olímpia (próximo ao Fórum). As partes, acompanhadas de seus respectivos Advogados, deverão comparecer com antecedência de 15 minutos, munidas de RG e CPF. A intimação da(s) parte(s) autor(as) para a audiência deve ser feita na pessoa do Advogado (Art.334, §3º), por meio da publicação desta decisão no DJE, enquanto a citação/intimação da(s) parte(s) requerida(s) deve ser pessoal (por carta, e-mail ou mandado, conforme o caso). Por ora, no CEJUSC, apenas estão sendo realizadas sessões no modo telepresencial, razão pela qual fica concedido o prazo 05 dias (a contar da publicação desta decisão no DJE) para a parte autora apresentar nos autos os e-mails e os números de telefone móvel/celular de todas as partes e Advogados para viabilizar a realização de audiência virtual. 2.1. Nos termos do §8º, do Art.334, do CPC, ficam as partes cientes de que o não comparecimento do autor ou do réu à audiência de conciliação é considerado ato atentatório à dignidade da justiça e será sancionado com multa de até dois por cento da vantagem econômica pretendida ou do valor da causa. O Egrégio Tribunal de Justiça do Estado de São Paulo tem corroborado tem entendimento: (a) ... MULTA. AUDIÊNCIA DE CONCILIAÇÃO. Obrigatoriedade do comparecimento das partes na audiência conciliatória designada. Cabimento da multa aplicada diante da ausência da apelante. Valor fixado dentro dos parâmetros estabelecidos pelo §8º do art. 334 do Código de Processo Civil... deve ser mantida a multa pelo não comparecimento na audiência, inclusive quanto ao valor (R$-12.000,00)... (TJSP; Rel. AFONSO BRÁZ; j.21/07/2017; apelação 0009610-64.2011.8.26.0597; Comarca de origem: Olímpia; Magistrado prolator da decisão de 1º grau: Lucas Figueiredo Alves da Silva); (b) ... ATO QUE SE MOSTRA CONTRÁRIO À DIGNIDADE DA JUSTIÇA... MULTA PELO NÃO COMPARECIMENTO INJUSTIFICADO À AUDIÊNCIA DE CONCILIAÇÃO - ARTIGO 334, § 8º, DO CPC... restando aplicável o mesmo raciocínio para a multa em razão do não comparecimento injustificado da apelante à audiência de conciliação, consoante artigo 334, § 8º, do CPC... (TJSP; Rel. CARLOS ABRÃO; j.26/07/2019; apelação 1004249-14.2018.8.26.0400; Comarca de origem: Olímpia; Magistrado prolator da decisão de 1º grau: Lucas Figueiredo Alves da Silva). 2.2. Lembre-se, ainda, que, considerando o disposto nos §9º e 10, do Art.334, do CPC, que mencionam duas pessoas diferentes, quais sejam, Advogados e representante, e considerando o disposto no Art.25 do Código de Ética e Disciplina da Ordem dos Advogados do Brasil, é possível concluir pela impossibilidade de acumulação de funções de Advogado e representante na audiência. Ressalvo que: (a) eventual transgressão disciplinar/ética transcende o objeto desta ação judicial e será apurada na esfera própria; (b) processualmente, a irregularidade poderá ocasionar a aplicação da multa mencionada no item acima. Nesse sentido: ... O comparecimento da parte à audiência de conciliação acompanhado do advogado é indispensável, sob pena de multa, caso a ausência não seja justificada. Disposição expressa do art. 334, §8º, do CPC, sobre a qual ambas as partes foram aletradas, sobretudo o autor intuitivamente o maior interessado. Condenação mantida. RECURSO DESPROVIDO... A própria dicção do art. 334, §8º, do CPC/15, trazido ao ordenamento processual pelo novo 'códex' vigente... deixa clara a importância que a audiência conciliatória, agora acompanhada por profissionais treinados, conciliadores e mediadores, passou a ter... (TJSP; Rel. Des. RAMON MATEO JÚNIOR; j.03/03/2020; apelação 1003373-93.2017.8.26.0400; Comarca de origem: Olímpia; Magistrado prolator da decisão de 1º grau: Lucas Figueiredo Alves da Silva). Ainda nesse sentido: AÇÃO RESOLUTÓRIA E REPETITÓRIA. AQUISIÇÃO DE UNIDADE IMOBILIÁRIA EM CONSTRUÇÃO. PARCIAL PROCEDÊNCIA. NULIDADE DA R. SENTENÇA. INOCORRÊNCIA. PARTES QUE INJUSTIFICADAMENTE NÃO COMPARECERAM À AUDIÊNCIA INICIAL. PRESENÇA DOS ADVOGADOS QUE NÃO SUPRE A PRÓPRIA. IMPOSIÇÃO DE MULTA CORRETA... 2. A audiência de conciliação/mediação poderia ter sido dispensada se também a ré manifestasse expresso e tempestivo desinteresse na autocomposição (art. 334, §§ 4º, I, e 5º, do Código de Processo Civil). Não o fez, e nenhuma das partes justificou a ausência própria - os advogados, ainda que com poderes para transigir, eram seus representantes, não presentantes, e deveriam acompanhá-las, não suprir seu comparecimento pessoal (art. 334, §§ 9º e 10, do Código de Processo Civil) -, incorrendo assim em ato atentatório à dignidade da justiça e autorizando a imposição da multa que o Juízo a quo lhes infligiu (art. 334, § 8º, do Código de Processo Civil), ora mantida. Acrescente-se em reforço e arremate que, no despacho inicial (fls. 143/149, 2), 'as partes foram previamente informadas sobre a necessidade e relevância de seu comparecimento na audiência de conciliação no momento da sua designação, ocasião em que se alertou para a pena prevista no § 8º do art. 334 do CPC' (TJSP, 18ª Câmara de Direito Privado: Apelação nº 1003373-93.2017.8.26.0400, excerto do voto condutor). Desprezaram a advertência sem explicação, havendo que arcar com o corolário legal desse seu proceder... (TJSP; Rel. Des. CARLOS GOLDMAN; j.22/04/2020; apelação 1000510-96.2019.8.26.0400; Comarca de origem: Olímpia; Magistrado prolator da decisão de 1º grau: Lucas Figueiredo Alves da Silva; g.n.). Outro Acórdão merece destaque: ...Aplicação de multa nos termos do artigo 334, § 8º, do NCPC - Decisão correta... Recurso improvido.. devendo ser mantida a r. sentença tal como lançada, inclusive no tocante à multa, por ato atentatório à dignidade da justiça (artigo 334, §8º, no NCPC). Ora, a ré não compareceu na audiência de conciliação e, também, ao contrário do que afirma, não estava devidamente representada, tendo perfeita incidência os artigos 334, §§9º e 10º, do NCPC e 25 do Código de Ética e Disciplina da Ordem dos Advogados do Brasil... (TJSP. Rel. Des. SOUZA LOPES; j.19/12/2019; apelação 1002456-40.2018.8.26.0400; Comarca de origem: Olímpia; Magistrado prolator da decisão de 1º grau: Lucas Figueiredo Alves da Silva). 2.3. Vale lembrar a importância da Advocacia na intermediação de um acordo, expondo para as partes as vantagens da composição, nos termos do inciso VI, do parágrafo único, do Art. 2º, do Código de Ética e Disciplina da Ordem dos Advogados do Brasil: Parágrafo único. São deveres do advogado: ... VI - estimular, a qualquer tempo, a conciliação e a mediação entre os litigantes, prevenindo, sempre que possível, a instauração de litígios. 2.4. Nos termos da Resolução 809/2019 do TJSP (vide DJE de 21/03/2019, pp.01/03) e da Portaria 03/2019 do CEJUSC local, a remuneração do conciliador fica fixada na ordem de R$60,00. 2.4.1. O valor deve ser antecipado pela parte autora, por meio de depósito judicial vinculado ao procedimento do CEJUSC local nº0000017-68.2021.8.26.0400 (conforme Comunicado CG 2554/2019). Frise-se que: (a) o comprovante deve ser juntado nos autos no prazo de 07 (sete) dias úteis após a publicação desta decisão, sob pena de extinção do processo sem resolução do mérito; (b) não é possível o agendamento do pagamento, razão pela qual no momento da operação bancária é necessário atualizar a data do pagamento; (c) depósito dos honorários não deve ser direcionado para o número da ação judicial, mas sim para o procedimento do CEJUSC mencionado acima. 2.4.2. Ressalvo que, a depender do resultado da demanda, tal valor poderá ser inserido nos cálculos para o ressarcimento da parte que antecipou. Após a audiência, confirmada a presença do conciliador e a realização do ato, fica desde já autorizado o pagamento. 3. Após a audiência de conciliação, observe-se o seguinte: (a) havendo acordo, tornem conclusos para homologação; (b) não havendo acordo, aguarde-se o prazo de eventual contestação, abrindo vista à(s) parte(s) autora(s), e, em seguida, tornem conclusos para julgamento antecipado ou decisão de saneamento. Fica advertida a parte requerida que, assim que for citada, terá o prazo de 48 horas para apresentar nos autos os respectivos e-mails e números de telefone móvel/celular (Parte e Advogado) para viabilizar a realização de audiência virtual, sob pena de configuração de ato atentatório à dignidade da Justiça, nos termos do item 2 acima. Caso ainda não tenha constituído Advogado, poderá: (a) informar o e-mail e os telefones enviando e-mail para olimpia2@tjsp.jus.br , quando então o Cartório Judicial irá realizar o cadastro na plataforma de audiências; ou (b) ligar para o Fórum (17-32811927 ramal 209) e repassar as informações para algum servidor do Cartório do 2º Ofício Cível. 4. Sobre o pedido liminar, que tem natureza de tutela de urgência, é preciso lembrar o disposto no caput do Art.300 do Código de Processo Civil: Art. 300. A tutela de urgência será concedida quando houver elementos que evidenciem a probabilidade do direito e o perigo de dano ou o risco ao resultado útil do processo. No caso concreto, considerando que a(s) parte(s) autora(s) nega a relação negocial e que a negativação de seu nome prejudica a realização de negócios, encontram-se presentes os requisitos que autorizam a concessão da liminar. Nestes termos, concedo a medida liminar, e o faço para determinar à(s) parte(s) requerida(s) a retirada das restrições no nome da(s) parte(s) autora(s) relacionadas aos fatos aqui discutidos. 4.1 Considerando a natureza da(s) determinação(ões) acima (obrigações de fazer), vale ressaltar que esta decisão está fundamentada nas seguintes previsões do Código de Processo Civil: Art. 139. O juiz dirigirá o processo conforme as disposições deste Código, incumbindo-lhe:... IV - determinar todas as medidas indutivas, coercitivas, mandamentais ou sub-rogatórias necessárias para assegurar o cumprimento de ordem judicial, inclusive nas ações que tenham por objeto prestação pecuniária... Art. 297. O juiz poderá determinar as medidas que considerar adequadas para efetivação da tutela provisória. Parágrafo único. A efetivação da tutela provisória observará as normas referentes ao cumprimento provisório da sentença, no que couber... Art. 497. Na ação que tenha por objeto a prestação de fazer ou de não fazer, o juiz, se procedente o pedido, concederá a tutela específica ou determinará providências que assegurem a obtenção de tutela pelo resultado prático equivalente. Parágrafo único. Para a concessão da tutela específica destinada a inibir a prática, a reiteração ou a continuação de um ilícito, ou a sua remoção, é irrelevante a demonstração da ocorrência de dano ou da existência de culpa ou dolo... Art. 500.A indenização por perdas e danos dar-se-á sem prejuízo da multa fixada periodicamente para compelir o réu ao cumprimento específico da obrigação... Art. 537.A multa independe de requerimento da parte e poderá ser aplicada na fase de conhecimento, em tutela provisória ou na sentença, ou na fase de execução, desde que seja suficiente e compatível com a obrigação e que se determine prazo razoável para cumprimento do preceito. Lembre-se, ainda, o disposto no enunciado nº38 da I Jornada de Direito Processual Civil do Conselho da Justiça Federal: As medidas adequadas para efetivação da tutela provisória independem do trânsito em julgado, inclusive contra o Poder Público (art. 297 do CPC). 4.2. Fica estipulado o prazo de 10 dias para o cumprimento da liminar. Em caso de descumprimento desta determinação, fica estabelecida a multa diária de R$1.000,00. O valor da multa será revertida em favor da(s) parte(s) autora(s). O prazo será contado a partir da ciência da(s) parte(s) requerida(s). Deverá a secretaria judicial observar o disposto na súmula 410 do Superior Tribunal de Justiça: A prévia intimação pessoal do devedor constitui condição necessária para a cobrança de multa pelo descumprimento de obrigação de fazer ou não fazer. 4.3. Além disso, é preciso lembrar que, nos termos do Art.77, inciso IV, §§1º e 2º, do Código de Processo Civil, é dever da parte e de seus Procuradores cumprir com exatidão as decisões jurisdicionais, de natureza provisória ou final, e não criar embaraços à sua efetivação, sob pena de eventual conduta ser punida como ato atentatório à dignidade da Justiça, sem prejuízo das sanções criminais, civis e processuais cabíveis (inclusive com a aplicação de multa de até 20% do valor da causa). 4.4. Nesse sentido decisão do Egrégio Tribunal de Justiça do Estado de São Paulo: Diante de seu evidente caráter inibitório, oportuna a imposição de multa diária para o caso em comento, cuja incidência ficou condicionada ao descumprimento da decisão... Se tal valor for diminuído, incentivará o descumprimento da obrigação imposta ou, no mínimo, não imprimirá a sensação de urgência requerida. Por esta razão, tampouco será delimitado o período de incidência das astreintes (TJSP, Rel. Des. SÉRGIO RUI, j.18/04/13, Agravo de Instrumento nº 0028068-09.2013.8.26.0000; comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva). No mesmo sentido: Agravo de Instrumento. Antecipação dos efeitos da tutela concedida. Multa diária. Penalidade de caráter inibitório para compelir o devedor a cumprir a obrigação específica. Adequação do montante da multa arbitrada, ante a capacidade econômico-financeira da empresa agravante e a urgência no cumprimento da tutela deferida. O eventual surgimento de um valor elevado está diretamente relacionado à desídia no cumprimento da obrigação determinada. Decisão mantida. Tutela recursal indeferida (TJSP; Rel. Des. MAURO CONTI MACHADO; j.17/03/15; agravo 2222153-24.2014.8.26.0000; Comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva; g.n.). Cito, ainda, o seguinte julgado: ...ASTREINTE Cominação de multa em caso de descumprimento da decisão que determinou que o Banco-réu exclua o nome do autor-agravado dos cadastros restritivos de proteção ao crédito - Admissibilidade - Fixação da multa diária em R$500,00 Cabimento Aplicação dos princípios da razoabilidade e da proporcionalidade. Recurso desprovido... Ressalte-se que para afastá-la bastará ao recorrente continuar a cumprir a determinação judicial (TJSP; Rel. Des. ÁLVARO TORRES JÚNIOR; j.16/05/2016; agravo 2245257-11.2015.8.26.0000; Comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva; g.n.). Acrescente-se, ainda, que a imposição de multa tem sido mantida em reiterados julgamentos do Egrégio Tribunal de Justiça do Estado de São Paulo: (a) agravo 2170074-97.2016.8.26.0000; Rel. Des. ROBERTO MAC CRACKEN; j.15/09/2016; Comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva; (b) agravo 2050471-93.2017.8.26.0000; Rel. Des. SPENCER ALMEIDA FERREIRA; j.25/05/2017; Comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva; (c) agravo 2227494-60.2016.8.26.0000; Rel. Des. ROBERTO MAC CRACKEN; j.15/12/2016; Comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva; (d) agravo 2137018-05.2018.8.26.0000; Rel. Des. ACHILE ALESINA; j.01º/08/2018; Comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva; (e) agravo 2195272-68.2018.8.26.0000; Rel. Des. NELSON JORGE JÚNIOR; j.16/10/2018; Comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva; (f) agravo 2154403-63.2018.8.26.0000; Rel. Des. COUTINHO ARRUDA; j.05/11/2018; Comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva; (g) agravo 2180706-80.2019.8.26.0000; Rel. Des. ELÓI ESTEVÃO TROLY; j.25/09/2019; Comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva; (h) agravo 2258887-95.2019.8.26.0000; Rel. Des. EDUARDO SIQUEIRA; j.27/02/2020; Comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva; (i) agravo 2050911-84.2020.8.26.0000; Rel. Des. MATHEUS FONTES; j.30/04/2020; Comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva. Registre-se, também, que o Superior Tribunal de Justiça tem corroborado o mesmo entendimento mencionado acima, razão pela qual ficam as partes desde já advertidas que, se reconhecido o descumprimento e a consequente incidência de multa, não haverá que se falar em redução do valor. Nesse sentido: RECURSOS ESPECIAIS. PROCESSUAL CIVIL. IMPUGNAÇÃO AO CUMPRIMENTO DE SENTENÇA. VALORES BLOQUEADOS. BACEN-JUD. TRANSFERÊNCIA. ORDEM JUDICIAL. DESCUMPRIMENTO. MULTA COMINATÓRIA. VALOR. REDUÇÃO. IMPOSSIBILIDADE. RAZOABILIDADE E PROPORCIONALIDADE. PRINCÍPIOS RESPEITADOS. TETO. FIXAÇÃO. EXCEPCIONALIDADE... 5. A exigibilidade da multa aplicada é a exceção que somente se torna impositiva na hipótese de recalcitrância da parte, de modo que, para nela não incidir, basta que se dê fiel cumprimento à ordem judicial. 6. Tendo sido a multa cominatória estipulada em valor proporcional à obrigação imposta, não é possível reduzi-la alegando a expressividade da quantia final apurada se isso resultou da recalcitrância da parte em promover o cumprimento da ordem judicial. Precedentes... 8. O descumprimento de uma ordem judicial que determina a transferência de numerário bloqueado via Bacen-Jud para uma conta do juízo, além de configurar crime tipificado no art. 330 do Código Penal, constitui ato atentatório à dignidade da Justiça, a teor do disposto nos arts. 600 do CPC/1973 e 774 do CPC/2015... 10. Admitir que a multa fixada em decorrência do descumprimento de uma ordem de transferência de numerário seja, em toda e qualquer hipótese, limitada ao valor da obrigação é conferir à instituição financeira livre arbítrio para decidir o que melhor atende aos seus interesses. 11. O destinatário da ordem judicial deve ter em mente a certeza de que eventual desobediência lhe trará consequências mais gravosas que o próprio cumprimento da ordem, e não a expectativa de redução ou de limitação da multa a ele imposta, sob pena de tornar inócuo o instituto processual e de violar o direito fundamental à efetividade da tutela jurisdicional... Esse, no entanto, é apenas o objeto principal de uma demanda que, devido à insistente recalcitrância das instituições financeiras envolvidas, já conta, até o momento, com 3 (três) condenações por desobediência a ordens judiciais, que, somadas, já ultrapassam a quantia de R$ 5.000.000,00 (cinco milhões de reais) em valores atualizados até 23/11/2017. Vale também registrar que durante a tramitação do feito foram aplicadas diversas multas processuais, inclusive por litigância de má-fé, que ainda não foram executadas (STJ; Rel. Min. RICARDO VILLAS BÔAS CUEVA; j.26/05/2020; REsp.1.840.693; g.n.). 5. Considerando o deferimento da liminar, ressalvo, desde já, que poderá(ão) a(s) parte(s) autora(s) responder pelas penas do artigo 80 do Código de Processo Civil (Art. 80.Considera-se litigante de má-fé aquele que: ... II - alterar a verdade dos fatos; III - usar do processo para conseguir objetivo ilegal...). 6. Analisando os fatos mencionados, vislumbro a aplicação do Código de Defesa do Consumidor (e a consequente inversão do ônus da prova). Nesse contexto, na atual fase processual, para evitar qualquer alegação de cerceamento de defesa em razão da discussão sobre a natureza jurídica da inversão do ônus da prova (regra de julgamento ou matéria de instrução/procedimento), fica consignado que é ônus da parte requerida BANCO VOTORANTIM S/A apresentar toda a prova documental eventualmente existente junto com a contestação, sob pena de preclusão, lembrando que tal ônus também decorre do Art.434 do Código de Processo Civil: Incumbe à parte instruir a petição inicial ou a contestação com os documentos destinados a provar suas alegações. 7. A carta de citação/intimação (p/ Banco Votorantim S/A, no endereço cadastrado no sistema) será criada eletronicamente pelo sistema e enviada diretamente aos correios, sendo que o recibo que a acompanha valerá como comprovante de que o ato se efetivou. Cumpra-se na forma e sob as penas da Lei. Int.
+Advogados(s): Icaro Etone Dutra da Cunha Rinaldo (OAB 375079/SP)
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			18/01/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+				
+					
+					
+						
+					
+				
+
+				<a class="linkMovVincProc" id="linkMovVincProc-56852922" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=56852922&amp;nmRecursoAcessado=Carta+Expedida">
+					<img width="16" height="16" border="0" src="/cpopg/imagens/doc.png"></a>
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+					<a class="linkMovVincProc" id="linkMovVincProc-2-56852922" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=56852922&amp;nmRecursoAcessado=Carta+Expedida"> Carta Expedida
+					</a>
+				
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Processo Digital - Carta - Citação e Intimação - Audiência de Conciliação-Mediação no CEJUSC-Setor de Conciliação - Rito Comum - NOVO CPC
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			18/01/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+				
+					
+					
+						
+					
+				
+
+				<a class="linkMovVincProc" id="linkMovVincProc-56842412" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=56842412&amp;nmRecursoAcessado=Recebida+a+Peti%C3%A7%C3%A3o+Inicial++-+Cita%C3%A7%C3%A3o+Por+Carta+AR">
+					<img width="16" height="16" border="0" src="/cpopg/imagens/doc.png"></a>
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+					<a class="linkMovVincProc" id="linkMovVincProc-2-56842412" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=56842412&amp;nmRecursoAcessado=Recebida+a+Peti%C3%A7%C3%A3o+Inicial++-+Cita%C3%A7%C3%A3o+Por+Carta+AR"> Recebida a Petição Inicial  - Citação Por Carta AR
+					</a>
+				
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Vistos. 1. Uma vez preenchidos os requisitos legais, recebo a petição inicial. 2. Nos termos do Art.334 do Código de Processo Civil (CPC), designo o dia 23/03/2021, às 15:10 horas para audiência de conciliação/mediação. Contestação poderá ser oferecida no prazo de 15 dias, contados da data da audiência, caso não haja acordo, ressalvada a hipótese do inciso II, do Art.335 do mencionado Código, sob pena de revelia. A sessão de conciliação será realizada no CENTRO JUDICIÁRIO DE SOLUÇÃO DE CONFLITOS E CIDADANIA (CEJUSC) no seguinte endereço: Rua Duque de Caxias, 554, Centro, Olímpia (próximo ao Fórum). As partes, acompanhadas de seus respectivos Advogados, deverão comparecer com antecedência de 15 minutos, munidas de RG e CPF. A intimação da(s) parte(s) autor(as) para a audiência deve ser feita na pessoa do Advogado (Art.334, §3º), por meio da publicação desta decisão no DJE, enquanto a citação/intimação da(s) parte(s) requerida(s) deve ser pessoal (por carta, e-mail ou mandado, conforme o caso). Por ora, no CEJUSC, apenas estão sendo realizadas sessões no modo telepresencial, razão pela qual fica concedido o prazo 05 dias (a contar da publicação desta decisão no DJE) para a parte autora apresentar nos autos os e-mails e os números de telefone móvel/celular de todas as partes e Advogados para viabilizar a realização de audiência virtual. 2.1. Nos termos do §8º, do Art.334, do CPC, ficam as partes cientes de que o não comparecimento do autor ou do réu à audiência de conciliação é considerado ato atentatório à dignidade da justiça e será sancionado com multa de até dois por cento da vantagem econômica pretendida ou do valor da causa. O Egrégio Tribunal de Justiça do Estado de São Paulo tem corroborado tem entendimento: (a) ... MULTA. AUDIÊNCIA DE CONCILIAÇÃO. Obrigatoriedade do comparecimento das partes na audiência conciliatória designada. Cabimento da multa aplicada diante da ausência da apelante. Valor fixado dentro dos parâmetros estabelecidos pelo §8º do art. 334 do Código de Processo Civil... deve ser mantida a multa pelo não comparecimento na audiência, inclusive quanto ao valor (R$-12.000,00)... (TJSP; Rel. AFONSO BRÁZ; j.21/07/2017; apelação 0009610-64.2011.8.26.0597; Comarca de origem: Olímpia; Magistrado prolator da decisão de 1º grau: Lucas Figueiredo Alves da Silva); (b) ... ATO QUE SE MOSTRA CONTRÁRIO À DIGNIDADE DA JUSTIÇA... MULTA PELO NÃO COMPARECIMENTO INJUSTIFICADO À AUDIÊNCIA DE CONCILIAÇÃO - ARTIGO 334, § 8º, DO CPC... restando aplicável o mesmo raciocínio para a multa em razão do não comparecimento injustificado da apelante à audiência de conciliação, consoante artigo 334, § 8º, do CPC... (TJSP; Rel. CARLOS ABRÃO; j.26/07/2019; apelação 1004249-14.2018.8.26.0400; Comarca de origem: Olímpia; Magistrado prolator da decisão de 1º grau: Lucas Figueiredo Alves da Silva). 2.2. Lembre-se, ainda, que, considerando o disposto nos §9º e 10, do Art.334, do CPC, que mencionam duas pessoas diferentes, quais sejam, Advogados e representante, e considerando o disposto no Art.25 do Código de Ética e Disciplina da Ordem dos Advogados do Brasil, é possível concluir pela impossibilidade de acumulação de funções de Advogado e representante na audiência. Ressalvo que: (a) eventual transgressão disciplinar/ética transcende o objeto desta ação judicial e será apurada na esfera própria; (b) processualmente, a irregularidade poderá ocasionar a aplicação da multa mencionada no item acima. Nesse sentido: ... O comparecimento da parte à audiência de conciliação acompanhado do advogado é indispensável, sob pena de multa, caso a ausência não seja justificada. Disposição expressa do art. 334, §8º, do CPC, sobre a qual ambas as partes foram aletradas, sobretudo o autor intuitivamente o maior interessado. Condenação mantida. RECURSO DESPROVIDO... A própria dicção do art. 334, §8º, do CPC/15, trazido ao ordenamento processual pelo novo 'códex' vigente... deixa clara a importância que a audiência conciliatória, agora acompanhada por profissionais treinados, conciliadores e mediadores, passou a ter... (TJSP; Rel. Des. RAMON MATEO JÚNIOR; j.03/03/2020; apelação 1003373-93.2017.8.26.0400; Comarca de origem: Olímpia; Magistrado prolator da decisão de 1º grau: Lucas Figueiredo Alves da Silva). Ainda nesse sentido: AÇÃO RESOLUTÓRIA E REPETITÓRIA. AQUISIÇÃO DE UNIDADE IMOBILIÁRIA EM CONSTRUÇÃO. PARCIAL PROCEDÊNCIA. NULIDADE DA R. SENTENÇA. INOCORRÊNCIA. PARTES QUE INJUSTIFICADAMENTE NÃO COMPARECERAM À AUDIÊNCIA INICIAL. PRESENÇA DOS ADVOGADOS QUE NÃO SUPRE A PRÓPRIA. IMPOSIÇÃO DE MULTA CORRETA... 2. A audiência de conciliação/mediação poderia ter sido dispensada se também a ré manifestasse expresso e tempestivo desinteresse na autocomposição (art. 334, §§ 4º, I, e 5º, do Código de Processo Civil). Não o fez, e nenhuma das partes justificou a ausência própria - os advogados, ainda que com poderes para transigir, eram seus representantes, não presentantes, e deveriam acompanhá-las, não suprir seu comparecimento pessoal (art. 334, §§ 9º e 10, do Código de Processo Civil) -, incorrendo assim em ato atentatório à dignidade da justiça e autorizando a imposição da multa que o Juízo a quo lhes infligiu (art. 334, § 8º, do Código de Processo Civil), ora mantida. Acrescente-se em reforço e arremate que, no despacho inicial (fls. 143/149, 2), 'as partes foram previamente informadas sobre a necessidade e relevância de seu comparecimento na audiência de conciliação no momento da sua designação, ocasião em que se alertou para a pena prevista no § 8º do art. 334 do CPC' (TJSP, 18ª Câmara de Direito Privado: Apelação nº 1003373-93.2017.8.26.0400, excerto do voto condutor). Desprezaram a advertência sem explicação, havendo que arcar com o corolário legal desse seu proceder... (TJSP; Rel. Des. CARLOS GOLDMAN; j.22/04/2020; apelação 1000510-96.2019.8.26.0400; Comarca de origem: Olímpia; Magistrado prolator da decisão de 1º grau: Lucas Figueiredo Alves da Silva; g.n.). Outro Acórdão merece destaque: ...Aplicação de multa nos termos do artigo 334, § 8º, do NCPC - Decisão correta... Recurso improvido.. devendo ser mantida a r. sentença tal como lançada, inclusive no tocante à multa, por ato atentatório à dignidade da justiça (artigo 334, §8º, no NCPC). Ora, a ré não compareceu na audiência de conciliação e, também, ao contrário do que afirma, não estava devidamente representada, tendo perfeita incidência os artigos 334, §§9º e 10º, do NCPC e 25 do Código de Ética e Disciplina da Ordem dos Advogados do Brasil... (TJSP. Rel. Des. SOUZA LOPES; j.19/12/2019; apelação 1002456-40.2018.8.26.0400; Comarca de origem: Olímpia; Magistrado prolator da decisão de 1º grau: Lucas Figueiredo Alves da Silva). 2.3. Vale lembrar a importância da Advocacia na intermediação de um acordo, expondo para as partes as vantagens da composição, nos termos do inciso VI, do parágrafo único, do Art. 2º, do Código de Ética e Disciplina da Ordem dos Advogados do Brasil: Parágrafo único. São deveres do advogado: ... VI - estimular, a qualquer tempo, a conciliação e a mediação entre os litigantes, prevenindo, sempre que possível, a instauração de litígios. 2.4. Nos termos da Resolução 809/2019 do TJSP (vide DJE de 21/03/2019, pp.01/03) e da Portaria 03/2019 do CEJUSC local, a remuneração do conciliador fica fixada na ordem de R$60,00. 2.4.1. O valor deve ser antecipado pela parte autora, por meio de depósito judicial vinculado ao procedimento do CEJUSC local nº0000017-68.2021.8.26.0400 (conforme Comunicado CG 2554/2019). Frise-se que: (a) o comprovante deve ser juntado nos autos no prazo de 07 (sete) dias úteis após a publicação desta decisão, sob pena de extinção do processo sem resolução do mérito; (b) não é possível o agendamento do pagamento, razão pela qual no momento da operação bancária é necessário atualizar a data do pagamento; (c) depósito dos honorários não deve ser direcionado para o número da ação judicial, mas sim para o procedimento do CEJUSC mencionado acima. 2.4.2. Ressalvo que, a depender do resultado da demanda, tal valor poderá ser inserido nos cálculos para o ressarcimento da parte que antecipou. Após a audiência, confirmada a presença do conciliador e a realização do ato, fica desde já autorizado o pagamento. 3. Após a audiência de conciliação, observe-se o seguinte: (a) havendo acordo, tornem conclusos para homologação; (b) não havendo acordo, aguarde-se o prazo de eventual contestação, abrindo vista à(s) parte(s) autora(s), e, em seguida, tornem conclusos para julgamento antecipado ou decisão de saneamento. Fica advertida a parte requerida que, assim que for citada, terá o prazo de 48 horas para apresentar nos autos os respectivos e-mails e números de telefone móvel/celular (Parte e Advogado) para viabilizar a realização de audiência virtual, sob pena de configuração de ato atentatório à dignidade da Justiça, nos termos do item 2 acima. Caso ainda não tenha constituído Advogado, poderá: (a) informar o e-mail e os telefones enviando e-mail para olimpia2@tjsp.jus.br , quando então o Cartório Judicial irá realizar o cadastro na plataforma de audiências; ou (b) ligar para o Fórum (17-32811927 ramal 209) e repassar as informações para algum servidor do Cartório do 2º Ofício Cível. 4. Sobre o pedido liminar, que tem natureza de tutela de urgência, é preciso lembrar o disposto no caput do Art.300 do Código de Processo Civil: Art. 300. A tutela de urgência será concedida quando houver elementos que evidenciem a probabilidade do direito e o perigo de dano ou o risco ao resultado útil do processo. No caso concreto, considerando que a(s) parte(s) autora(s) nega a relação negocial e que a negativação de seu nome prejudica a realização de negócios, encontram-se presentes os requisitos que autorizam a concessão da liminar. Nestes termos, concedo a medida liminar, e o faço para determinar à(s) parte(s) requerida(s) a retirada das restrições no nome da(s) parte(s) autora(s) relacionadas aos fatos aqui discutidos. 4.1 Considerando a natureza da(s) determinação(ões) acima (obrigações de fazer), vale ressaltar que esta decisão está fundamentada nas seguintes previsões do Código de Processo Civil: Art. 139. O juiz dirigirá o processo conforme as disposições deste Código, incumbindo-lhe:... IV - determinar todas as medidas indutivas, coercitivas, mandamentais ou sub-rogatórias necessárias para assegurar o cumprimento de ordem judicial, inclusive nas ações que tenham por objeto prestação pecuniária... Art. 297. O juiz poderá determinar as medidas que considerar adequadas para efetivação da tutela provisória. Parágrafo único. A efetivação da tutela provisória observará as normas referentes ao cumprimento provisório da sentença, no que couber... Art. 497. Na ação que tenha por objeto a prestação de fazer ou de não fazer, o juiz, se procedente o pedido, concederá a tutela específica ou determinará providências que assegurem a obtenção de tutela pelo resultado prático equivalente. Parágrafo único. Para a concessão da tutela específica destinada a inibir a prática, a reiteração ou a continuação de um ilícito, ou a sua remoção, é irrelevante a demonstração da ocorrência de dano ou da existência de culpa ou dolo... Art. 500.A indenização por perdas e danos dar-se-á sem prejuízo da multa fixada periodicamente para compelir o réu ao cumprimento específico da obrigação... Art. 537.A multa independe de requerimento da parte e poderá ser aplicada na fase de conhecimento, em tutela provisória ou na sentença, ou na fase de execução, desde que seja suficiente e compatível com a obrigação e que se determine prazo razoável para cumprimento do preceito. Lembre-se, ainda, o disposto no enunciado nº38 da I Jornada de Direito Processual Civil do Conselho da Justiça Federal: As medidas adequadas para efetivação da tutela provisória independem do trânsito em julgado, inclusive contra o Poder Público (art. 297 do CPC). 4.2. Fica estipulado o prazo de 10 dias para o cumprimento da liminar. Em caso de descumprimento desta determinação, fica estabelecida a multa diária de R$1.000,00. O valor da multa será revertida em favor da(s) parte(s) autora(s). O prazo será contado a partir da ciência da(s) parte(s) requerida(s). Deverá a secretaria judicial observar o disposto na súmula 410 do Superior Tribunal de Justiça: A prévia intimação pessoal do devedor constitui condição necessária para a cobrança de multa pelo descumprimento de obrigação de fazer ou não fazer. 4.3. Além disso, é preciso lembrar que, nos termos do Art.77, inciso IV, §§1º e 2º, do Código de Processo Civil, é dever da parte e de seus Procuradores cumprir com exatidão as decisões jurisdicionais, de natureza provisória ou final, e não criar embaraços à sua efetivação, sob pena de eventual conduta ser punida como ato atentatório à dignidade da Justiça, sem prejuízo das sanções criminais, civis e processuais cabíveis (inclusive com a aplicação de multa de até 20% do valor da causa). 4.4. Nesse sentido decisão do Egrégio Tribunal de Justiça do Estado de São Paulo: Diante de seu evidente caráter inibitório, oportuna a imposição de multa diária para o caso em comento, cuja incidência ficou condicionada ao descumprimento da decisão... Se tal valor for diminuído, incentivará o descumprimento da obrigação imposta ou, no mínimo, não imprimirá a sensação de urgência requerida. Por esta razão, tampouco será delimitado o período de incidência das astreintes (TJSP, Rel. Des. SÉRGIO RUI, j.18/04/13, Agravo de Instrumento nº 0028068-09.2013.8.26.0000; comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva). No mesmo sentido: Agravo de Instrumento. Antecipação dos efeitos da tutela concedida. Multa diária. Penalidade de caráter inibitório para compelir o devedor a cumprir a obrigação específica. Adequação do montante da multa arbitrada, ante a capacidade econômico-financeira da empresa agravante e a urgência no cumprimento da tutela deferida. O eventual surgimento de um valor elevado está diretamente relacionado à desídia no cumprimento da obrigação determinada. Decisão mantida. Tutela recursal indeferida (TJSP; Rel. Des. MAURO CONTI MACHADO; j.17/03/15; agravo 2222153-24.2014.8.26.0000; Comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva; g.n.). Cito, ainda, o seguinte julgado: ...ASTREINTE Cominação de multa em caso de descumprimento da decisão que determinou que o Banco-réu exclua o nome do autor-agravado dos cadastros restritivos de proteção ao crédito - Admissibilidade - Fixação da multa diária em R$500,00 Cabimento Aplicação dos princípios da razoabilidade e da proporcionalidade. Recurso desprovido... Ressalte-se que para afastá-la bastará ao recorrente continuar a cumprir a determinação judicial (TJSP; Rel. Des. ÁLVARO TORRES JÚNIOR; j.16/05/2016; agravo 2245257-11.2015.8.26.0000; Comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva; g.n.). Acrescente-se, ainda, que a imposição de multa tem sido mantida em reiterados julgamentos do Egrégio Tribunal de Justiça do Estado de São Paulo: (a) agravo 2170074-97.2016.8.26.0000; Rel. Des. ROBERTO MAC CRACKEN; j.15/09/2016; Comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva; (b) agravo 2050471-93.2017.8.26.0000; Rel. Des. SPENCER ALMEIDA FERREIRA; j.25/05/2017; Comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva; (c) agravo 2227494-60.2016.8.26.0000; Rel. Des. ROBERTO MAC CRACKEN; j.15/12/2016; Comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva; (d) agravo 2137018-05.2018.8.26.0000; Rel. Des. ACHILE ALESINA; j.01º/08/2018; Comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva; (e) agravo 2195272-68.2018.8.26.0000; Rel. Des. NELSON JORGE JÚNIOR; j.16/10/2018; Comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva; (f) agravo 2154403-63.2018.8.26.0000; Rel. Des. COUTINHO ARRUDA; j.05/11/2018; Comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva; (g) agravo 2180706-80.2019.8.26.0000; Rel. Des. ELÓI ESTEVÃO TROLY; j.25/09/2019; Comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva; (h) agravo 2258887-95.2019.8.26.0000; Rel. Des. EDUARDO SIQUEIRA; j.27/02/2020; Comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva; (i) agravo 2050911-84.2020.8.26.0000; Rel. Des. MATHEUS FONTES; j.30/04/2020; Comarca de origem: Olímpia; Juiz prolator da decisão de primeiro grau: Lucas Figueiredo Alves da Silva. Registre-se, também, que o Superior Tribunal de Justiça tem corroborado o mesmo entendimento mencionado acima, razão pela qual ficam as partes desde já advertidas que, se reconhecido o descumprimento e a consequente incidência de multa, não haverá que se falar em redução do valor. Nesse sentido: RECURSOS ESPECIAIS. PROCESSUAL CIVIL. IMPUGNAÇÃO AO CUMPRIMENTO DE SENTENÇA. VALORES BLOQUEADOS. BACEN-JUD. TRANSFERÊNCIA. ORDEM JUDICIAL. DESCUMPRIMENTO. MULTA COMINATÓRIA. VALOR. REDUÇÃO. IMPOSSIBILIDADE. RAZOABILIDADE E PROPORCIONALIDADE. PRINCÍPIOS RESPEITADOS. TETO. FIXAÇÃO. EXCEPCIONALIDADE... 5. A exigibilidade da multa aplicada é a exceção que somente se torna impositiva na hipótese de recalcitrância da parte, de modo que, para nela não incidir, basta que se dê fiel cumprimento à ordem judicial. 6. Tendo sido a multa cominatória estipulada em valor proporcional à obrigação imposta, não é possível reduzi-la alegando a expressividade da quantia final apurada se isso resultou da recalcitrância da parte em promover o cumprimento da ordem judicial. Precedentes... 8. O descumprimento de uma ordem judicial que determina a transferência de numerário bloqueado via Bacen-Jud para uma conta do juízo, além de configurar crime tipificado no art. 330 do Código Penal, constitui ato atentatório à dignidade da Justiça, a teor do disposto nos arts. 600 do CPC/1973 e 774 do CPC/2015... 10. Admitir que a multa fixada em decorrência do descumprimento de uma ordem de transferência de numerário seja, em toda e qualquer hipótese, limitada ao valor da obrigação é conferir à instituição financeira livre arbítrio para decidir o que melhor atende aos seus interesses. 11. O destinatário da ordem judicial deve ter em mente a certeza de que eventual desobediência lhe trará consequências mais gravosas que o próprio cumprimento da ordem, e não a expectativa de redução ou de limitação da multa a ele imposta, sob pena de tornar inócuo o instituto processual e de violar o direito fundamental à efetividade da tutela jurisdicional... Esse, no entanto, é apenas o objeto principal de uma demanda que, devido à insistente recalcitrância das instituições financeiras envolvidas, já conta, até o momento, com 3 (três) condenações por desobediência a ordens judiciais, que, somadas, já ultrapassam a quantia de R$ 5.000.000,00 (cinco milhões de reais) em valores atualizados até 23/11/2017. Vale também registrar que durante a tramitação do feito foram aplicadas diversas multas processuais, inclusive por litigância de má-fé, que ainda não foram executadas (STJ; Rel. Min. RICARDO VILLAS BÔAS CUEVA; j.26/05/2020; REsp.1.840.693; g.n.). 5. Considerando o deferimento da liminar, ressalvo, desde já, que poderá(ão) a(s) parte(s) autora(s) responder pelas penas do artigo 80 do Código de Processo Civil (Art. 80.Considera-se litigante de má-fé aquele que: ... II - alterar a verdade dos fatos; III - usar do processo para conseguir objetivo ilegal...). 6. Analisando os fatos mencionados, vislumbro a aplicação do Código de Defesa do Consumidor (e a consequente inversão do ônus da prova). Nesse contexto, na atual fase processual, para evitar qualquer alegação de cerceamento de defesa em razão da discussão sobre a natureza jurídica da inversão do ônus da prova (regra de julgamento ou matéria de instrução/procedimento), fica consignado que é ônus da parte requerida BANCO VOTORANTIM S/A apresentar toda a prova documental eventualmente existente junto com a contestação, sob pena de preclusão, lembrando que tal ônus também decorre do Art.434 do Código de Processo Civil: Incumbe à parte instruir a petição inicial ou a contestação com os documentos destinados a provar suas alegações. 7. A carta de citação/intimação (p/ Banco Votorantim S/A, no endereço cadastrado no sistema) será criada eletronicamente pelo sistema e enviada diretamente aos correios, sendo que o recibo que a acompanha valerá como comprovante de que o ato se efetivou. Cumpra-se na forma e sob as penas da Lei. Int.
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			18/01/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Designada Audiência de Conciliação
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Conciliação
+Data: 23/03/2021 Hora 15:10
+Local: CEJUSC- R. Duque de Caxias, 554- Centro-Olímpia-SP
+Situacão: Realizada
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			18/01/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Documento Juntado
+				
+			
+			
+			<br><span style="font-style: italic;">
+				
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			18/01/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+				
+					
+					
+						
+					
+				
+
+				<a class="linkMovVincProc" id="linkMovVincProc-56830784" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=56830784&amp;nmRecursoAcessado=Certid%C3%A3o+de+Cart%C3%B3rio+Expedida">
+					<img width="16" height="16" border="0" src="/cpopg/imagens/doc.png"></a>
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+					<a class="linkMovVincProc" id="linkMovVincProc-2-56830784" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=56830784&amp;nmRecursoAcessado=Certid%C3%A3o+de+Cart%C3%B3rio+Expedida"> Certidão de Cartório Expedida
+					</a>
+				
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Certidão 6 - Custas iniciais
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			18/01/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+				
+					
+					
+						
+					
+				
+
+				<a class="linkMovVincProc" id="linkMovVincProc-56829743" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=56829743&amp;nmRecursoAcessado=Certid%C3%A3o+de+Cart%C3%B3rio+Expedida">
+					<img width="16" height="16" border="0" src="/cpopg/imagens/doc.png"></a>
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+					<a class="linkMovVincProc" id="linkMovVincProc-2-56829743" title="Visualizar documento em inteiro teor" href="/cpopg/abrirDocumentoVinculadoMovimentacao.do?processo.codigo=B40004AQD0000&amp;cdDocumento=56829743&amp;nmRecursoAcessado=Certid%C3%A3o+de+Cart%C3%B3rio+Expedida"> Certidão de Cartório Expedida
+					</a>
+				
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Certidão 11 - queima de guia DARE recolhida após 01-03-2017
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			15/01/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Petição Juntada
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Nº Protocolo: WOLI.21.70001165-0
+Tipo da Petição: Petição Intermediária
+Data: 15/01/2021 17:58
+
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			15/01/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Guia Juntada
+				
+			
+			
+			<br><span style="font-style: italic;">
+				
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			15/01/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Guia Juntada
+				
+			
+			
+			<br><span style="font-style: italic;">
+				
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			15/01/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Petição Juntada
+				
+			
+			
+			<br><span style="font-style: italic;">
+				Nº Protocolo: WOLI.21.70001162-6
+Tipo da Petição: Petição Intermediária
+Data: 15/01/2021 17:46
+
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoEscuro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			15/01/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Conclusos para Decisão
+				
+			
+			
+			<br><span style="font-style: italic;">
+				
+			</span>
+			
+		</td>
+	</tr>
+<tr class="fundoClaro containerMovimentacao" style="">
+<td class="dataMovimentacao" width="120" style="vertical-align: top">
+			15/01/2021
+		</td>
+		<td width="20" valign="top" aria-hidden="true">
+			
+		</td>
+		<td class="descricaoMovimentacao" style="vertical-align: top; padding-bottom: 5px">
+			
+			
+				
+				
+					Distribuído Livremente (por Sorteio) (movimentação exclusiva do distribuidor)
+				
+			
+			
+			<br><span style="font-style: italic;">
+				
+			</span>
+			
+		</td>
+	</tr>
+</tbody>
+</table>
+<div id="divLinksTituloBlocoMovimentacoes" style="text-align:right">
+		
+
+
+
+
+
+
+
+
+
+<input id="mensagemNaoExibidamovimentacoes" type="hidden" value=""><input id="linkNaoExibidomovimentacoes" type="hidden" value="Recolher"><span id="mensagensExibindomovimentacoes" class="mensagemExibindo">
+
+</span>  
+
+    <a id="linkmovimentacoes" href="javascript:" class="linkNaoSelecionado unj-link-collapse">
+        <span id="setasDireitamovimentacoes" class="setasDireita">
+            <i class="unj-link-collapse__icon glyph glyph-chevron-down"></i>
+        </span>
+        Mais
+    </a>
+
+<script>
+	$(function() {
+		var controlarLink = function() {
+			var $linkNaoExibido = $('input#linkNaoExibidomovimentacoes');
+			var conteudoLinkNaoApresentado = $linkNaoExibido.val();
+			var $link = $('a#linkmovimentacoes');
+			
+			$linkNaoExibido.val($link.html());
+			$link.html(conteudoLinkNaoApresentado);
+		};
+
+		var controlarMensagem = function() {
+			var $mensagemNaoExibida = $('input#mensagemNaoExibidamovimentacoes');
+			var $spanMensagem = $('span#mensagensExibindomovimentacoes');
+			var mensagemExibida = $spanMensagem.html();
+			var mensagemNaoExibida = $mensagemNaoExibida.val();
+			
+			$spanMensagem.html(mensagemNaoExibida);
+			$mensagemNaoExibida.val(mensagemExibida);
+		};
+
+		var controlarMensagemLink = function() {
+			controlarMensagem();
+			controlarLink();
+		};
+		
+		var esconderElementosExtrasMostrarDefault = function() {
+			$('#tabelaTodasMovimentacoes').hide();
+			$('#tabelaUltimasMovimentacoes').show();
+		};
+
+		var mostrarElementosExtrasEsconderDefault = function() {
+			$('#tabelaUltimasMovimentacoes').hide();
+			$('#tabelaTodasMovimentacoes').show();
+		};
+
+		var initPagina = function() {
+            var setasDireita = '<span id="setasDireitamovimentacoes" class="setasDireita"><i class="unj-link-collapse__icon glyph glyph-chevron-up"></i></span>';
+			var $linkEscondido = $('input#linkNaoExibidomovimentacoes');
+			$linkEscondido.val(setasDireita+$linkEscondido.val());
+		};
+
+		var bindLink = function() {
+			var $link = $('a#linkmovimentacoes');
+			$link.funcToggle('click', mostrarElementosExtrasEsconderDefault, esconderElementosExtrasMostrarDefault);
+			$link.bind('click', controlarMensagemLink);
+		};
+
+		initPagina();
+		bindLink();
+		esconderElementosExtrasMostrarDefault();
+	});
+</script>
+</div>
+
+		
+
+	
+
+	                
+	                
+	                
+	                
+	                
+	                
+	            
+	        
+	            
+	                
+	                
+	                
+	                
+	                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle tituloDoBloco">Petições diversas</h2>
+		
+	
+</div>
+
+<!-- Tabela de petições diversas -->
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1">
+<thead>
+<tr class="label">
+<th width="140" style="text-align:left">Data</th>
+			      <th width="*">Tipo</th>
+			    </tr>
+<tr class="fundoEscuro" height="2" aria-hidden="true">
+<td></td>
+					<td></td>
+				</tr>
+</thead>
+<tbody>
+<tr class="fundoClaro">
+<td width="140" style="text-align:left">
+								15/01/2021
+							</td>
+							<td width="*">
+								Petição Intermediária <br>
+</td>
+						</tr>
+<tr class="fundoEscuro">
+<td width="140" style="text-align:left">
+								15/01/2021
+							</td>
+							<td width="*">
+								Petição Intermediária <br>
+</td>
+						</tr>
+<tr class="fundoClaro">
+<td width="140" style="text-align:left">
+								22/01/2021
+							</td>
+							<td width="*">
+								Petição Intermediária <br>
+</td>
+						</tr>
+<tr class="fundoEscuro">
+<td width="140" style="text-align:left">
+								28/01/2021
+							</td>
+							<td width="*">
+								Petições Diversas <br>
+</td>
+						</tr>
+<tr class="fundoClaro">
+<td width="140" style="text-align:left">
+								16/03/2021
+							</td>
+							<td width="*">
+								Petições Diversas <br>
+</td>
+						</tr>
+<tr class="fundoEscuro">
+<td width="140" style="text-align:left">
+								26/03/2021
+							</td>
+							<td width="*">
+								Contestação <br>
+</td>
+						</tr>
+<tr class="fundoClaro">
+<td width="140" style="text-align:left">
+								30/03/2021
+							</td>
+							<td width="*">
+								Petições Diversas <br>
+</td>
+						</tr>
+<tr class="fundoEscuro">
+<td width="140" style="text-align:left">
+								23/04/2021
+							</td>
+							<td width="*">
+								Manifestação Sobre a Contestação <br>
+</td>
+						</tr>
+<tr class="fundoClaro">
+<td width="140" style="text-align:left">
+								05/07/2021
+							</td>
+							<td width="*">
+								Embargos de Declaração <br>
+</td>
+						</tr>
+<tr class="fundoEscuro">
+<td width="140" style="text-align:left">
+								13/08/2021
+							</td>
+							<td width="*">
+								Razões de Apelação <br>
+</td>
+						</tr>
+<tr class="fundoClaro">
+<td width="140" style="text-align:left">
+								09/09/2021
+							</td>
+							<td width="*">
+								Contrarrazões de Apelação <br>
+</td>
+						</tr>
+<tr class="fundoEscuro">
+<td width="140" style="text-align:left">
+								26/05/2022
+							</td>
+							<td width="*">
+								Petições Diversas <br>
+</td>
+						</tr>
+<tr class="fundoClaro">
+<td width="140" style="text-align:left">
+								12/09/2022
+							</td>
+							<td width="*">
+								Petições Diversas <br>
+</td>
+						</tr>
+</tbody>
+</table>
+<!--  Tabela de petições diversas --><script type="text/javascript">
+	(function($) {
+		$(function(){
+			var captcha = $.saj.getUrlParameter('uuidCaptcha');
+			if(!captcha){
+				return;
+			}
+			$('.incidente a').each(function(){
+				var $incidente = $(this);
+				var url = $incidente.attr('href');
+				$incidente.attr('href', url+'&uuidCaptcha='+captcha);
+			});
+		})
+	})(jQuery);
+</script><div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle tituloDoBloco">Incidentes, ações incidentais, recursos e execuções de sentenças</h2>
+		
+	
+</div>
+
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1"><tr>
+<td id="processoSemIncidentes" colspan="3" align="left">
+		 	
+ 				
+ 				
+ 					Não há incidentes, ações incidentais, recursos ou execuções de sentenças vinculados a este processo.
+ 				
+ 			
+		  </td> 
+	    </tr></table>
+<!--  Incidentes --><script type="text/javascript">
+    (function ($) {
+        $(function () {
+            var captcha = $.saj.getUrlParameter('uuidCaptcha');
+
+            if(!captcha){
+                return;
+            }
+            $.each($('.processoApensado'), function (i, value) {
+                var $link = $(value);
+                $link.attr('href', $link.attr('href') + '&uuidCaptcha=' + captcha);
+            })
+
+        })
+    })(jQuery);
+</script><div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle tituloDoBloco">Apensos, Entranhados e Unificados</h2>
+		
+	
+</div>
+
+
+
+    
+        <table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1"><tbody id="dadosApensosNaoDisponiveis"><tr>
+<td colspan="3" align="left">Não há processos apensados, entranhados e unificados a este processo.</td>
+            </tr></tbody></table>
+<div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle tituloDoBloco">Audiências</h2>
+		
+	
+</div>
+
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+        
+    
+
+<a name="audienciasPlaceHolder"></a>
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1">
+<tr class="label">
+<th align="left" valign="top" width="140">Data</th>
+                <th align="left" valign="top" width="*">Audiência</th>
+                <th align="left" valign="top" width="100">Situação</th>
+                <th align="left" valign="top" width="100">Qt. Pessoas</th>
+            </tr>
+<tr class="fundoEscuro" height="2" aria-hidden="true">
+<td colspan="4"></td>
+            </tr>
+<tr class="fundoClaro">
+<td valign="top" align="left" width="140">
+                        23/03/2021
+                    </td>
+                    
+                        
+                        
+                            <td valign="top" align="left" width="*">
+                                Conciliação
+                            </td>
+                        
+                    
+
+                    <td align="left" valign="top" width="100">
+                        Realizada
+                    </td>
+                    <td align="left" valign="top" width="100">
+                        2
+                    </td>
+                </tr>
+</table>
+<form id="popupCdas" style="display: none;">
+	<!--  dados da lista (CDAs) -->
+	<div style="height:210px; overflow: auto;">
+		<table id="tableCdasPrincipais" style="margin-left:10px; margin-top:1px; width: 98%;">
+<thead>
+<tr class="fundoClaro">
+<th style="text-align:left;">Número CDA</th>
+					<th style="text-align:left;">Valor</th>
+					<th style="text-align:left;">Dt. CDA</th>
+					<th style="text-align:left;">Valor atualizado</th>
+					<th style="text-align:left;">Dt. atualização</th>
+					<th style="text-align:left;">Situação</th>
+				</tr>
+<tr class="fundoEscuro" height="2" aria-hidden="true">
+<td colspan="6"></td>
+				</tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+</form>
+
+	                
+	                
+	                
+	                
+	            
+	        
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	<form action="/cpopg/show.do?processo.codigo=B40004AQD0000&amp;processo.foro=400&amp;processo.numero=1000133-57.2021.8.26.0400" id="popupSenha" style="display: none;" method="POST">
+		
+		<table role="document">
+<tr>
+<td colspan="2" style="padding-bottom:20px">Atendendo a resolução 121 do CNJ.</td>
+			</tr>
+<tr align="center">
+<td align="left" colspan="2" style="padding-bottom:20px">
+					<div style="float:left; line-height:30px;">Se for uma parte ou interessado, digite a senha do processo</div>
+					<div style="float:left;width: 140px; padding-left:15px">
+						<input type="password" name="senhaProcesso" maxlength="12" value="" rotulo="" class="form-control" id="senhaProcesso"><input type="hidden" name="idRecursoQueProvocouLiberacaoPorSenha" value="">
+</div>
+					<div class="unj-form-control-group__icon">
+						<div class="dropdown show">
+							<a href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<span class="glyph glyph-info" aria-hidden="true"></span>
+							</a>
+							<div class="dropdown-menu tooltip-campos" aria-labelledby="dropdownMenuLink">
+								
+									É necessário informar uma senha para acessar processo em segredo de justiça, bem como para acessar autos dos demais processos.<br><br>
+									Se for parte do processo e ainda não possua uma senha, <b>solicite-a no cartório</b>.<br><br>
+</div>
+						</div>
+					</div>
+				</td>
+			</tr>
+<tr>
+<td colspan="2" align="center">
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	    
+	<input type="button" name="btFechar" value="Cancelar" onclick="" onmouseover="B_mOver(this);" onmouseout="B_mOut(this);" class="spwBotao " id="botaoFecharPopupSenha"><input type="submit" name="btEnviarSenha" value="Continuar" onclick="" onmouseover="B_mOver(this);" onmouseout="B_mOut(this);" class="spwBotaoDefault btn-space" id="btEnviarSenha">
+</td>
+			</tr>
+</table>
+</form>
+
+
+
+
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+		
+
+
+
+<footer><nav class="navbar__footer"><div class="navbar__footer__container">
+
+            <ul class="navbar__footer__list-brand">
+<li class="navbar__footer__list-brand__item">
+                    <a href="https://www.softplan.com.br/solucoes/saj-tribunais/" class="navbar__footer__list-brand__item__link link_softplan_tribunais">
+                        <img src="https://esaj.tjsp.jus.br/esaj/img/brand/icon-saj.png" alt="SAJ"></a>
+                </li>
+                <li class="navbar__footer__list-brand__item">
+                    <a href="https://www.softplan.com.br/" class="navbar__footer__list-brand__item__link link_softplan">
+                        <img src="https://esaj.tjsp.jus.br/esaj/img/brand/icon-softplan.png" alt="Softplan"></a>
+                </li>
+            </ul>
+<ul class="navbar__footer__list-actions"></ul>
+</div>
+    </nav></footer><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"errorBeacon":"bam.nr-data.net","licenseKey":"b61bdf610d","agent":"","beacon":"bam.nr-data.net","applicationTime":76,"applicationID":"735834757","transactionName":"MlZRN0QECkMAVERZDgscYBdEEBBDIFREWQ4LHFERGAYLXU9EX1YVFV9SDRgWBVpPVEBfTxZHQRZCFkpRAkNZXw9LYFsMQSQHRAhYXg==","queueTime":0}</script>
+</body>
+</html>
